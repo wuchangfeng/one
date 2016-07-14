@@ -1,0 +1,35 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#30469b"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            app:tabIndicatorColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#30469b"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="#ff0000"
+            app:tabTextColor="#ffffff">
+        </android.support.design.widget.TabLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+</android.support.design.widget.CoordinatorLayout>

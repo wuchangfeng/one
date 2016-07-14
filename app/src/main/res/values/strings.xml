@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MyOne</string>
+    <!--for mianmenu-->
+    <string name="action_settings">设置</string>
+    <string name="action_save">收藏</string>
+    <string name="action_about">关于</string>
+
+    <!--for viewpager-->
+    <string name="OneImg">图片</string>
+    <string name="SuJin">文章</string>
+    <string name="WenDa">问答</string>
+
+    <!--for other-->
+    <string name="loading">loading</string>
+    <string name="lable">问答</string>
+
+
+</resources>
