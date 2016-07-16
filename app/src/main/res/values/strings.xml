@@ -1,18 +1,28 @@
 <resources>
     <string name="app_name">MyOne</string>
     <!--for mianmenu-->
-    <string name="action_settings">设置</string>
+    <string name="action_check">夜间模式</string>
     <string name="action_save">收藏</string>
     <string name="action_about">关于</string>
-
+    <string name="menu_search">search</string>
+    <string name="menu_notifications">notifications</string>
+    <string name="menu_setting">设置</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_save">收藏</string>
     <!--for viewpager-->
     <string name="OneImg">图片</string>
     <string name="SuJin">文章</string>
     <string name="WenDa">问答</string>
-
     <!--for other-->
     <string name="loading">loading</string>
     <string name="lable">问答</string>
-
-
+    <string name="hot_article">热门文章</string>
+    <string name="save_ok">保存成功</string>
+    <string name="save_error">保存失败</string>
+    <!--for aboutactivity-->
+    <string name="app_intro">ZhuanLan Meizhi\nGitHub:https://github.com/wuchangfeng/ZhuanLan</string>
+    <string name="app_about">个人一个练手 App,主要学习 RxJava 和 Retrofit 以及基于 RxJava 的缓存技术以及一些常用开源库的使用。\n</string>
+    <string name="data_state">App 中的知乎专栏 API 为并非由知乎官方提供，侵权删。妹子图的 API 来自 Gank.io。\n感谢。</string>
+    <string name="open_source">开源库:\nrxjava\nretrofit\nokhttp\nPhotoView\nglide\neasyrecyclerview\ncom.nispok:snackbar\nom.afollestad.material-dialogs</string>
 </resources>
+

@@ -14,23 +14,16 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/blueStatus"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:theme="@style/ToolbarTheme"/>
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tab_layout"
-            app:tabIndicatorColor="#FFFFFF"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/blueStatus"
-            app:tabGravity="fill"
-            app:tabMode="fixed"
-            app:tabSelectedTextColor="#ffffff"
-            app:tabTextColor="#ffffff">
-        </android.support.design.widget.TabLayout>
+            android:background="#30469b"
+            app:layout_scrollFlags="scroll|enterAlways" />
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_empty="@layout/view_empty"
+        app:layout_progress="@layout/view_progress"
+        />
 
 </android.support.design.widget.CoordinatorLayout>

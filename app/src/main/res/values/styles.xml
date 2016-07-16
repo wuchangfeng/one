@@ -3,19 +3,28 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/blueStatus</item>
+        <item name="colorPrimaryDark">@color/blueStatus</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>
     </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
-    <!--TextView-->
+    <!--This theme for slide means that you can slide activity/fragment like wechat-->
+    <style name="SlideTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 
+    <!--TextView-->
     <style name="NormalTextView">
         <item name="android:textColor">@color/dark</item>
         <item name="android:textSize">@dimen/textSize_normal</item>
@@ -34,6 +43,13 @@
     <style name="SmallGreyTextView">
         <item name="android:textColor">@color/grey</item>
         <item name="android:textSize">@dimen/textSize_small</item>
+    </style>
+
+    <!-- for ToolBar-->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/white</item> <!--  敲定颜色-->
+        <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
+        <item name="colorAccent">@color/white</item>
     </style>
 
 </resources>

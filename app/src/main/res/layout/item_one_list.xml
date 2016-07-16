@@ -2,38 +2,37 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp">
+    android:layout_marginBottom="@dimen/margin_cardview">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingRight="16dp"
-        android:paddingLeft="16dp">
+        android:paddingRight="@dimen/margin_left"
+        android:paddingLeft="@dimen/margin_right">
         <!--图片,他的尺寸应该高一点-->
         <ImageView
             android:id="@+id/iv_cover"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="@dimen/oneimg_height"
+            android:layout_marginTop="@dimen/margin_4"
             android:scaleType="centerCrop"
             />
         <!--图片底下的描述信息,期刊号以及作者信息-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_10">
                 <TextView
                     android:id="@+id/tv_date"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="0dp"/>
+                    android:layout_height="match_parent"/>
 
                 <TextView
                     android:id="@+id/tv_author"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="0dp"
-                    android:textColor="@color/blueStatus"
                     />
 
         </LinearLayout>
@@ -42,11 +41,12 @@
             android:id="@+id/tv_intr"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="16sp"
+            android:textSize="@dimen/textSize_normal"
             android:textStyle="bold"
             android:maxLines="4"
             android:ellipsize="end"
-            android:gravity="center_vertical"/>
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"/>
 
     </LinearLayout>
 

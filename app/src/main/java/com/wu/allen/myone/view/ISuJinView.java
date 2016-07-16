@@ -14,5 +14,4 @@ public interface ISuJinView extends IBaseView{
     void hideLoading();
 
     void fillData(List<Article> list);
-
 }

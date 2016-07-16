@@ -56,7 +56,7 @@ public class OneImgFragment extends BaseFragment implements IOneView{
         mOneImgAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                //Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
+                //Intent intent = new Intent(getActivity(), ArtDetailActivity.class);
                 //intent.putExtra("article", mSuJinFragmentPresenter.getIntentArticle(position));
                 //startActivity(intent);
             }

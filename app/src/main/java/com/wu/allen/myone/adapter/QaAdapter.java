@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.ViewGroup;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
+import com.wu.allen.myone.adapter.viewholder.QaViewHolder;
 import com.wu.allen.myone.model.Qa;
 
 /**

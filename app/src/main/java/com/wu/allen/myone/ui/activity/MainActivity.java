@@ -1,15 +1,19 @@
 package com.wu.allen.myone.ui.activity;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import com.wu.allen.myone.R;
+import com.wu.allen.myone.injector.components.AppComponent;
 import com.wu.allen.myone.ui.fragment.OneImgFragment;
 import com.wu.allen.myone.ui.fragment.QaFragment;
 import com.wu.allen.myone.ui.fragment.SuJinFragment;
+import com.wu.allen.myone.utils.ToastUtil;
 import java.util.List;
 
 public class MainActivity extends BaseActivity {
@@ -20,7 +24,7 @@ public class MainActivity extends BaseActivity {
     private List<Fragment> fragments;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
@@ -31,7 +35,32 @@ public class MainActivity extends BaseActivity {
     public void initView(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        setSupportActionBar(toolbar);
+        //toolbar.setLogo(R.mipmap.ic_launcher);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        toolbar.setTitle("One");
+        toolbar.inflateMenu(R.menu.menu_toolbar);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int menuItemId = item.getItemId();
+                if (menuItemId == R.id.search) {
+                    ToastUtil.showLong(MainActivity.this,"search");
+                }else if(menuItemId == R.id.action_about){
+                    Intent intent = new Intent(MainActivity.this,AboutActivity.class);
+                    startActivity(intent);
+                }else if (menuItemId == R.id.action_save){
+                    Intent intent = new Intent(MainActivity.this,SaveArtActivity.class);
+                    startActivity(intent);
+                }
+                return true;
+            }
+        });
+    }
+
+
+    @Override
+    protected void setupFragmentComponent(AppComponent appComponent) {
+
     }
 
 

@@ -1,4 +1,4 @@
-package com.wu.allen.myone.adapter;
+package com.wu.allen.myone.adapter.viewholder;
 
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -24,7 +24,7 @@ public class QaViewHolder extends BaseViewHolder<Qa> {
 
     @Override
     public void setData(final Qa qa){
-        intr.setText(qa.getQaIntr());
-        ques.setText(qa.getQaDetail());
+        intr.setText(qa.getQaIntr().trim());
+        ques.setText(qa.getQaDetail().trim());
     }
 }

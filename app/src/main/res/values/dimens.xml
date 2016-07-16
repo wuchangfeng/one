@@ -3,10 +3,16 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-
+    <dimen name="margin_4">4dp</dimen>
     <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_left">16dp</dimen>
+    <dimen name="margin_right">16dp</dimen>
+    <dimen name="margin_cardview">8dp</dimen>
 
     <dimen name="textSize_title">20sp</dimen>
     <dimen name="textSize_normal">16sp</dimen>
     <dimen name="textSize_small">14sp</dimen>
+
+    <dimen name="artimg_height">184dp</dimen>
+    <dimen name="oneimg_height">300dp</dimen>
 </resources>

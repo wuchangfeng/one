@@ -2,14 +2,14 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp">
+    android:layout_marginBottom="@dimen/margin_cardview">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingRight="16dp"
-        android:paddingLeft="16dp">
+        android:paddingRight="@dimen/margin_right"
+        android:paddingLeft="@dimen/margin_left">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                     android:id="@+id/profile_image"
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/logo"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerInParent="true"
@@ -37,6 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
+                    android:text="@string/hot_article"
                     android:layout_marginLeft="6dp"
                     android:layout_toEndOf="@id/profile_image"
                     android:layout_toRightOf="@id/profile_image"
@@ -73,7 +74,7 @@
         <ImageView
             android:id="@+id/iv_cover"
             android:layout_width="match_parent"
-            android:layout_height="184dp"
+            android:layout_height="@dimen/artimg_height"
             android:scaleType="centerCrop"
             />
 
@@ -81,43 +82,13 @@
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="16sp"
+            android:textSize="@dimen/textSize_normal"
             android:textStyle="bold"
             android:maxLines="2"
             android:ellipsize="end"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
             android:gravity="center_vertical"/>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true">
-
-            <TextView
-                android:id="@+id/tv_like"
-                android:text="Like"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="0dp"/>
-
-            <TextView
-                android:id="@+id/tv_share"
-                android:text="|Share"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textColor="@color/blueStatus"
-                android:layout_toEndOf="@id/tv_like"
-                android:layout_toRightOf="@id/tv_like"/>
-
-            <TextView
-                android:id="@+id/tv_save"
-                android:text="|Save"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_toEndOf="@id/tv_share"
-                android:layout_toRightOf="@id/tv_share"/>
-
-        </RelativeLayout>
 
     </LinearLayout>
 

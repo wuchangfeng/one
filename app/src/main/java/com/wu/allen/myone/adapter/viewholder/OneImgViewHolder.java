@@ -1,4 +1,4 @@
-package com.wu.allen.myone.adapter;
+package com.wu.allen.myone.adapter.viewholder;
 
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -33,7 +33,7 @@ public class OneImgViewHolder extends BaseViewHolder<One> {
     public void setData(final One one){
         date.setText(one.getImgDate());
         author.setText(one.getImgAuth());
-        intr.setText(one.getImgStr());
+        intr.setText(one.getImgStr().trim());
         Glide.with(getContext())
             .load(one.getImgUrl())
             .centerCrop()
