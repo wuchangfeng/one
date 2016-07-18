@@ -41,13 +41,14 @@ public class QaFragment extends BaseFragment implements IQaView{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_oneimg_layout, container, false);
+        Log.d(TAG,"oncreateView");
         initView(view);
         return view;
     }
 
     private void initView(View view){
         mRecyclerView = (EasyRecyclerView) view.findViewById(recyclerView);
-        // 其实这个 new 可以写进 presenter 中,看着好变扭啊
+        // TODO: 2016/7/16 can add Adapter to p
         mQaAdapter = new QaAdapter(getActivity());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapterWithProgress(mQaAdapter);
@@ -56,9 +57,7 @@ public class QaFragment extends BaseFragment implements IQaView{
         mQaAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                //Intent intent = new Intent(getActivity(), ArtDetailActivity.class);
-                //intent.putExtra("article", mSuJinFragmentPresenter.getIntentArticle(position));
-                //startActivity(intent);
+                mQaFragmentPresenter.getIntentQa(getActivity(),position);
             }
         });
         mRecyclerView.setRefreshListener(this);
@@ -67,6 +66,7 @@ public class QaFragment extends BaseFragment implements IQaView{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG,"oncreate");
         mQaFragmentPresenter.onAttachView(this);
         mQaFragmentPresenter.onCreate(0);
     }

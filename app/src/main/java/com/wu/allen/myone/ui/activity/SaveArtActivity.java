@@ -49,10 +49,11 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapterWithProgress(mSaveAdapter);
         mSaveAdapter.setNoMore(R.layout.view_nomore);
-        mSaveAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
+        mSaveAdapter.setOnItemLongClickListener(new RecyclerArrayAdapter.OnItemLongClickListener() {
             @Override
-            public void onItemClick(int position) {
-
+            public boolean onItemClick(int position) {
+                // TODO: 2016/7/16 can delete the item of save artice and in realm also delete
+                return false;
             }
         });
     }
@@ -82,7 +83,6 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
 
     @Override
     public void fillData(List<ArticleSave> list) {
-        Log.d(TAG,list.size()+"");
         mSaveAdapter.addAll(list);
         mSaveAdapter.notifyDataSetChanged();
     }
@@ -90,7 +90,8 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mRealm.close();
+        if(mRealm != null)
+            mRealm.close();
     }
 
     @Override

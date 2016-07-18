@@ -1,11 +1,14 @@
 package com.wu.allen.myone.presenter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.FindCallback;
 import com.wu.allen.myone.model.Qa;
+import com.wu.allen.myone.ui.activity.QaDetailActivity;
 import com.wu.allen.myone.view.IQaView;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +19,9 @@ import java.util.List;
 
 public class QaFragmentPresenter extends BaseFragmentPresenter  {
 
+
     private IQaView mIQaView;
+    private Qa mQa;
     private List<Qa> qas = new ArrayList<>();
 
     @Override
@@ -28,10 +33,12 @@ public class QaFragmentPresenter extends BaseFragmentPresenter  {
     public void onAttachView(IQaView iqaView) {
         mIQaView = iqaView;
     }
-    /**
-     public Article getIntentArticle(int position){
-     return articles.get(position);
-     }*/
+
+    public void getIntentQa(Context context,int position){
+        Intent i = new Intent(context, QaDetailActivity.class);
+        i.putExtra("qa", qas.get(position));
+        context.startActivity(i);
+    }
 
     private void getArticle(int page) {
         mIQaView.hideLoading();
@@ -48,7 +55,7 @@ public class QaFragmentPresenter extends BaseFragmentPresenter  {
                         String qaAnsw = avObject.getString("qaAnsw");
                         String qaDetail = avObject.getString("qaDetail");
                         String qaIntr = avObject.getString("qaIntr");
-                        qa = new Qa(qaIntr,qaDetail,qaIntr);
+                        qa = new Qa(qaIntr,qaDetail,qaAnsw);
                         qas.add(qa);
                     }
                     mIQaView.fillData(qas);

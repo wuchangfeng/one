@@ -1,11 +1,14 @@
 package com.wu.allen.myone.presenter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.FindCallback;
 import com.wu.allen.myone.model.Article;
+import com.wu.allen.myone.ui.activity.ArtDetailActivity;
 import com.wu.allen.myone.view.ISuJinView;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +32,10 @@ public class SuJinFragmentPresenter extends BaseFragmentPresenter {
         mSuJinView = iSuJinView;
     }
 
-    public Article getIntentArticle(int position){
-        return articles.get(position);
+    public void getIntentArticle(Context context,int position){
+        Intent intent = new Intent(context, ArtDetailActivity.class);
+        intent.putExtra("article", articles.get(position));
+        context.startActivity(intent);
     }
 
     private void getArticle(int page) {

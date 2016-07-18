@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +46,7 @@ public class OneImgFragment extends BaseFragment implements IOneView{
 
     private void initView(View view){
         mRecyclerView = (EasyRecyclerView) view.findViewById(recyclerView);
-        // 其实这个 new 可以写进 presenter 中,看着好变扭啊
+        // TODO: 2016/7/16 Adapter can be set in Presenter also
         mOneImgAdapter = new OneImgAdapter(getActivity());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapterWithProgress(mOneImgAdapter);
@@ -56,9 +55,7 @@ public class OneImgFragment extends BaseFragment implements IOneView{
         mOneImgAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                //Intent intent = new Intent(getActivity(), ArtDetailActivity.class);
-                //intent.putExtra("article", mSuJinFragmentPresenter.getIntentArticle(position));
-                //startActivity(intent);
+                // TODO: 2016/7/16  you can do sth with this
             }
         });
         mRecyclerView.setRefreshListener(this);
@@ -106,12 +103,12 @@ public class OneImgFragment extends BaseFragment implements IOneView{
 
     @Override
     public void showLoading() {
-        Log.d(TAG,"loading is ok");
+        // EasyRecyclerView has done this for us
     }
 
     @Override
     public void hideLoading() {
-        Log.d(TAG,"hideloading is ok");
+        // EasyRecyclerView has done this for us
     }
 
     @Override

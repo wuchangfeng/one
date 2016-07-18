@@ -1,6 +1,5 @@
 package com.wu.allen.myone.ui.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -18,7 +17,6 @@ import com.wu.allen.myone.injector.components.DaggerSuJinFragmentComponent;
 import com.wu.allen.myone.injector.modules.SuJinFragmentModule;
 import com.wu.allen.myone.model.Article;
 import com.wu.allen.myone.presenter.SuJinFragmentPresenter;
-import com.wu.allen.myone.ui.activity.ArtDetailActivity;
 import com.wu.allen.myone.view.ISuJinView;
 import java.util.List;
 import javax.inject.Inject;
@@ -58,9 +56,7 @@ public class SuJinFragment extends BaseFragment implements ISuJinView{
         mSuJinAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Intent intent = new Intent(getActivity(), ArtDetailActivity.class);
-                intent.putExtra("article", mSuJinFragmentPresenter.getIntentArticle(position));
-                startActivity(intent);
+              mSuJinFragmentPresenter.getIntentArticle(getActivity(),position);
             }
         });
         mRecyclerView.setRefreshListener(this);
