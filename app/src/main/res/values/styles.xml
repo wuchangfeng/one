@@ -24,6 +24,12 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+    <!--This theme for truslate statusbar-->
+    <style name="ImageTranslucentTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
     <!--TextView-->
     <style name="NormalTextView">
         <item name="android:textColor">@color/dark</item>
@@ -44,12 +50,4 @@
         <item name="android:textColor">@color/grey</item>
         <item name="android:textSize">@dimen/textSize_small</item>
     </style>
-
-    <!-- for ToolBar-->
-    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
-        <item name="actionMenuTextColor">@color/white</item> <!--  敲定颜色-->
-        <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
-        <item name="colorAccent">@color/white</item>
-    </style>
-
 </resources>

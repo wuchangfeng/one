@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:paddingRight="@dimen/margin_left"
         android:paddingLeft="@dimen/margin_right">
-        <!--图片,他的尺寸应该高一点-->
+
         <ImageView
             android:id="@+id/iv_cover"
             android:layout_width="match_parent"
@@ -18,25 +18,31 @@
             android:layout_marginTop="@dimen/margin_4"
             android:scaleType="centerCrop"
             />
-        <!--图片底下的描述信息,期刊号以及作者信息-->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="@dimen/margin_10">
-                <TextView
-                    android:id="@+id/tv_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_4"
+                android:layout_marginRight="@dimen/margin_37"
+                android:textColor="@color/blueStatus"
+                android:textSize="@dimen/textSize_small"/>
 
-                <TextView
-                    android:id="@+id/tv_author"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    />
-
+            <TextView
+                android:id="@+id/tv_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_37"
+                android:layout_marginRight="@dimen/margin_4"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/textSize_small"/>
         </LinearLayout>
-        <!--图片底下的简介内容-->
+
         <TextView
             android:id="@+id/tv_intr"
             android:layout_width="match_parent"
@@ -45,8 +51,8 @@
             android:textStyle="bold"
             android:maxLines="4"
             android:ellipsize="end"
-            android:layout_marginTop="@dimen/margin_10"
-            android:layout_marginBottom="@dimen/margin_10"/>
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_20"/>
 
     </LinearLayout>
 

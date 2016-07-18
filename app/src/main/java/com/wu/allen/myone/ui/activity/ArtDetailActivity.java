@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.jude.swipbackhelper.SwipeBackHelper;
@@ -31,7 +32,7 @@ public class ArtDetailActivity extends BaseActivity {
     private Article mArticle;
     private Intent mIntent;
     private ImageView mImageView;
-    private JustifyTextView mTextView;
+    private TextView mTextView;
     private Realm mRealm;
 
     @Override
@@ -57,7 +58,7 @@ public class ArtDetailActivity extends BaseActivity {
     public void initView(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         mImageView = (ImageView) findViewById(R.id.iv_articlebg);
-        mTextView = (JustifyTextView) findViewById(R.id.tv_main);
+        mTextView = (TextView) findViewById(R.id.tv_main);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

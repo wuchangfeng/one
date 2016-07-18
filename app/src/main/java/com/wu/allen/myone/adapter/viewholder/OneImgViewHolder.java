@@ -31,8 +31,8 @@ public class OneImgViewHolder extends BaseViewHolder<One> {
 
     @Override
     public void setData(final One one){
-        date.setText(one.getImgDate());
-        author.setText(one.getImgAuth());
+        date.setText(one.getImgDate().trim());
+        author.setText(one.getImgAuth().trim());
         intr.setText(one.getImgStr().trim());
         Glide.with(getContext())
             .load(one.getImgUrl())

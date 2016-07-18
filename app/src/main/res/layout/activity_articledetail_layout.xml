@@ -50,8 +50,9 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <me.biubiubiu.justifytext.library.JustifyTextView
+            <TextView
                 android:id="@+id/tv_main"
+                android:layout_margin="@dimen/text_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />

@@ -2,11 +2,13 @@ package com.wu.allen.myone.ui.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
+import com.jude.swipbackhelper.SwipeBackHelper;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.adapter.SaveAdapter;
 import com.wu.allen.myone.injector.components.AppComponent;
@@ -37,6 +39,7 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_articlesave_layout);
+        SwipeBackHelper.onCreate(this);
         initView();
         QueryArticle();
     }
@@ -88,8 +91,15 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
     }
 
     @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        SwipeBackHelper.onPostCreate(this);
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
+        SwipeBackHelper.onDestroy(this);
         if(mRealm != null)
             mRealm.close();
     }

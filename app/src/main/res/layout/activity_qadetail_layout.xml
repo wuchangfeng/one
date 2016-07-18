@@ -22,13 +22,21 @@
     <TextView
         android:id="@+id/tv_intr"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/text_margin"
+        android:textSize="@dimen/textSize_title"/>
     <TextView
         android:id="@+id/tv_ques"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/text_margin"
+        android:textSize="@dimen/textSize_normal"/>
     <TextView
         android:id="@+id/tv_answ"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/text_margin"
+        android:textSize="@dimen/textSize_normal"
+        android:maxLines="24"
+        android:ellipsize="end"/>
 </LinearLayout>

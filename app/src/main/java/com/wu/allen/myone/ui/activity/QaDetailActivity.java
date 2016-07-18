@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.TextView;
+import com.jude.swipbackhelper.SwipeBackHelper;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.Qa;
 
@@ -26,6 +27,7 @@ public class QaDetailActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qadetail_layout);
+        SwipeBackHelper.onCreate(this);
         getData();
         initView();
     }
@@ -47,5 +49,17 @@ public class QaDetailActivity extends AppCompatActivity {
         mIntent = getIntent();
         mQa = (Qa) mIntent.getSerializableExtra("qa");
         Log.d(TAG,mQa.getQaIntr());
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        SwipeBackHelper.onPostCreate(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SwipeBackHelper.onDestroy(this);
     }
 }

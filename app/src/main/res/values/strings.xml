@@ -21,6 +21,10 @@
     <string name="save_error">保存失败</string>
     <string name="no_net">没有网络,去看看收藏的？</string>
     <string name="go_save">Go</string>
+    <string name="art_comment">个评论</string>
+    <string name="art_like">个喜欢</string>
+    <string name="qa_comment">个评论</string>
+    <string name="qa_focu">人喜欢</string>
     <!--for aboutactivity-->
     <string name="app_intro">ZhuanLan Meizhi\nGitHub:https://github.com/wuchangfeng/ZhuanLan</string>
     <string name="app_about">个人一个练手 App,主要学习 RxJava 和 Retrofit 以及基于 RxJava 的缓存技术以及一些常用开源库的使用。\n</string>

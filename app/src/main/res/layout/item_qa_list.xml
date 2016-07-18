@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/margin_cardview">
 
     <LinearLayout
@@ -48,6 +48,36 @@
             android:textSize="@dimen/textSize_small"
             android:layout_marginTop="@dimen/margin_4"
             android:ellipsize="end"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/tv_focu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textColor="@color/blueStatus"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textColor="@color/blueStatus"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_toEndOf="@id/tv_focu"
+                android:layout_toRightOf="@id/tv_focu"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
 </android.support.v7.widget.CardView>
