@@ -43,6 +43,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         }else if (id == R.id.action_about){
 
+        }else if (id == android.R.id.home){
+            onBackPressed();
         }
 
         return super.onOptionsItemSelected(item);

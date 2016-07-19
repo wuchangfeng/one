@@ -1,9 +1,11 @@
-<android.support.design.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     android:background="@color/background_material_light">
 
     <android.support.design.widget.AppBarLayout
@@ -15,8 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/blueStatus"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            android:background="@color/blueStatus"/>
     </android.support.design.widget.AppBarLayout>
 
     <com.jude.easyrecyclerview.EasyRecyclerView
@@ -26,5 +27,4 @@
         app:layout_empty="@layout/view_empty"
         app:layout_progress="@layout/view_progress"
         />
-
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

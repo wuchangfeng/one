@@ -31,7 +31,7 @@ public class AboutActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         CollapsingToolbarLayout collapsingToolbar =
-            (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+            (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
     }
 
     @Override

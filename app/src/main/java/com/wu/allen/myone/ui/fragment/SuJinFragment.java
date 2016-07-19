@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,7 +90,6 @@ public class SuJinFragment extends BaseFragment implements ISuJinView{
 
     @Override
     public void onRefresh() {
-        Log.d(TAG,"onRefresh");
         page = 0;
         handler.postDelayed(new Runnable() {
             @Override
@@ -105,12 +103,12 @@ public class SuJinFragment extends BaseFragment implements ISuJinView{
 
     @Override
     public void showLoading() {
-        Log.d(TAG,"loading is ok");
+
     }
 
     @Override
     public void hideLoading() {
-        Log.d(TAG,"hideloading is ok");
+
     }
 
     @Override

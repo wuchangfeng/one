@@ -20,7 +20,7 @@ import com.wu.allen.myone.injector.components.AppComponent;
 import com.wu.allen.myone.model.Article;
 import com.wu.allen.myone.model.ArticleSave;
 import io.realm.Realm;
-import me.biubiubiu.justifytext.library.JustifyTextView;
+
 
 /**
  * Created by allen on 2016/7/14.
@@ -59,14 +59,14 @@ public class ArtDetailActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         mImageView = (ImageView) findViewById(R.id.iv_articlebg);
         mTextView = (TextView) findViewById(R.id.tv_main);
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         CollapsingToolbarLayout mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         mCollapsingToolbarLayout.setTitle(mArticle.getTitle());
-        mCollapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);//设置还没收缩时状态下字体颜色
-        mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.GREEN);//设置收缩后Toolbar上字体的颜色
-
+        mCollapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.CollapsedAppBar);
+        mCollapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
+        mCollapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);
+        mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.GREEN);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

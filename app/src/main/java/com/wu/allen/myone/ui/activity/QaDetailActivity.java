@@ -1,8 +1,10 @@
 package com.wu.allen.myone.ui.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -40,7 +42,12 @@ public class QaDetailActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_white_24dp);
-        mTvtitle.setText(mQa.getQaIntr());
+        CollapsingToolbarLayout mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+        mCollapsingToolbarLayout.setTitle(mQa.getQaIntr());
+        mCollapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.CollapsedAppBar);
+        mCollapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
+        mCollapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);
+        mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.GREEN);
         mTvques.setText(mQa.getQaDetail());
         mTvansw.setText(mQa.getQaAnsw());
     }

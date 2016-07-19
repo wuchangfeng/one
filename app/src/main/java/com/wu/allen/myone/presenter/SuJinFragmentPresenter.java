@@ -24,7 +24,6 @@ public class SuJinFragmentPresenter extends BaseFragmentPresenter {
 
     @Override
     public void onCreate(int page) {
-        mSuJinView.showLoading();
         getArticle(page);
     }
 
@@ -39,7 +38,7 @@ public class SuJinFragmentPresenter extends BaseFragmentPresenter {
     }
 
     private void getArticle(int page) {
-        mSuJinView.hideLoading();
+        mSuJinView.showLoading();
         AVQuery<AVObject> query = AVQuery.getQuery("Content");
         query.orderByDescending("index");
         query.setLimit(10);
@@ -57,6 +56,7 @@ public class SuJinFragmentPresenter extends BaseFragmentPresenter {
                         article = new Article(title, intr, img, detail);
                         articles.add(article);
                     }
+                    mSuJinView.hideLoading();
                     mSuJinView.fillData(articles);
                 } else {
                     Log.d("SuJinFragmentPresenter",e.getMessage());
