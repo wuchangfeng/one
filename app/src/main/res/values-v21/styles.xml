@@ -2,6 +2,7 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:navigationBarColor">@color/blueStatus</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>

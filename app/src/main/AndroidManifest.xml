@@ -33,7 +33,7 @@
         </activity>
         <activity
             android:name=".ui.activity.SaveArtActivity"
-            android:theme="@style/ImageTranslucentTheme" >
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name=".ui.activity.AboutActivity"
