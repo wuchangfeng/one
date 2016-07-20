@@ -4,6 +4,8 @@
     <string name="action_check">夜间模式</string>
     <string name="action_save">收藏</string>
     <string name="action_about">关于</string>
+    <string name="action_search">查找</string>
+    <string name="action_notification">通知</string>
     <string name="menu_search">search</string>
     <string name="menu_notifications">notifications</string>
     <string name="menu_setting">设置</string>
@@ -30,6 +32,6 @@
     <string name="app_about">个人一个练手 App,主要学习 RxJava 和 Retrofit 以及基于 RxJava 的缓存技术以及一些常用开源库的使用。\n</string>
     <string name="data_state">App 中的知乎专栏 API 为并非由知乎官方提供，侵权删。妹子图的 API 来自 Gank.io。\n感谢。</string>
     <string name="open_source">开源库:\nrxjava\nretrofit\nokhttp\nPhotoView\nglide\neasyrecyclerview\ncom.nispok:snackbar\nom.afollestad.material-dialogs</string>
-
+    <string name="you_like">兄弟好眼光</string>
 </resources>
 

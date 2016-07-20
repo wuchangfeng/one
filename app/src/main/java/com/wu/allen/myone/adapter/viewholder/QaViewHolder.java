@@ -1,11 +1,13 @@
 package com.wu.allen.myone.adapter.viewholder;
 
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.Qa;
 import com.wu.allen.myone.utils.RanNumUtil;
+import com.wu.allen.myone.utils.ToastUtil;
 
 /**
  * Created by allen on 2016/7/15.
@@ -35,5 +37,17 @@ public class QaViewHolder extends BaseViewHolder<Qa> {
         ques.setText(qa.getQaDetail().trim());
         focu.setText(RanNumUtil.genNum()+focuFormat);
         comment.setText(RanNumUtil.genNum()+commentFormat);
+        comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtil.showLong(getContext(),"hello comment");
+            }
+        });
+        focu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtil.showLong(getContext(),"hello like");
+            }
+        });
     }
 }

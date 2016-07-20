@@ -37,6 +37,12 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <!--This theme for toolbar just like zhihu-->
+    <style name="Theme.ZhiHu" parent="AppTheme.NoActionBar">
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:src">@drawable/ic_menu_more_overflow</item>
+    </style>
+
     <!--TextView-->
     <style name="NormalTextView">
         <item name="android:textColor">@color/dark</item>

@@ -16,6 +16,8 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
+            app:popupTheme="@style/ToolbarPopupTheme"
+            android:theme="@style/GalaxyZooThemeToolbarDarkOverflow"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/blueStatus"/>
     </android.support.design.widget.AppBarLayout>

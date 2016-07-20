@@ -5,28 +5,27 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.widget.TextView;
 import com.jude.swipbackhelper.SwipeBackHelper;
 import com.wu.allen.myone.R;
+import com.wu.allen.myone.injector.components.AppComponent;
 import com.wu.allen.myone.model.Qa;
 
 /**
  * Created by allen on 2016/7/16.
  */
 
-public class QaDetailActivity extends AppCompatActivity {
+public class QaDetailActivity extends BaseActivity {
 
     private static final String TAG = "QaDetailActivity";
     private Intent mIntent;
     private Qa mQa;
     private Toolbar mToolbar;
-    private TextView mTvtitle,mTvques,mTvansw;
+    private TextView mTvtitle,mTvques,mTvansw,mTvcard;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qadetail_layout);
         SwipeBackHelper.onCreate(this);
@@ -39,6 +38,7 @@ public class QaDetailActivity extends AppCompatActivity {
         mTvtitle = (TextView)findViewById(R.id.tv_intr);
         mTvques = (TextView)findViewById(R.id.tv_ques);
         mTvansw = (TextView)findViewById(R.id.tv_answ);
+        mTvcard = (TextView)findViewById(R.id.tv_card);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_white_24dp);
@@ -48,14 +48,14 @@ public class QaDetailActivity extends AppCompatActivity {
         mCollapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
         mCollapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);
         mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.GREEN);
-        mTvques.setText(mQa.getQaDetail());
-        mTvansw.setText(mQa.getQaAnsw());
+        mTvques.setText(mQa.getQaDetail().trim());
+        mTvansw.setText(mQa.getQaAnsw().trim());
+        mTvcard.setText(mQa.getQaIntr().trim());
     }
 
     public void getData(){
         mIntent = getIntent();
         mQa = (Qa) mIntent.getSerializableExtra("qa");
-        Log.d(TAG,mQa.getQaIntr());
     }
 
     @Override
@@ -68,5 +68,10 @@ public class QaDetailActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         SwipeBackHelper.onDestroy(this);
+    }
+
+    @Override
+    protected void setupFragmentComponent(AppComponent appComponent) {
+
     }
 }

@@ -3,10 +3,10 @@ package com.wu.allen.myone;
 import android.app.Application;
 import android.content.Context;
 import com.avos.avoscloud.AVOSCloud;
+import com.wu.allen.myone.config.AppConstant;
 import com.wu.allen.myone.injector.components.AppComponent;
 import com.wu.allen.myone.injector.components.DaggerAppComponent;
 import com.wu.allen.myone.injector.modules.AppModule;
-import com.wu.allen.myone.utils.ConstantUtil;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -26,7 +26,7 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         // for leancloud
-        AVOSCloud.initialize(this, ConstantUtil.LEANCLOUDKEY,ConstantUtil.LEANCLOUDSERCERT);
+        AVOSCloud.initialize(this, AppConstant.LEANCLOUDKEY,AppConstant.LEANCLOUDSERCERT);
 
         // for dagger2
         appComponent= DaggerAppComponent.builder()

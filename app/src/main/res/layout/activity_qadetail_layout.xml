@@ -44,36 +44,58 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        app:behavior_overlapTop="69dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:contentPaddingBottom="16dp"
+            app:contentPaddingLeft="16dp"
+            app:contentPaddingRight="16dp"
+            app:contentPaddingTop="16dp">
             <TextView
-                android:id="@+id/tv_intr"
-                android:visibility="gone"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_margin="@dimen/text_margin"
-                android:textSize="@dimen/textSize_title"/>
-            <TextView
-                android:id="@+id/tv_ques"
+                android:id="@+id/tv_card"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_margin="@dimen/text_margin"
                 android:textSize="@dimen/textSize_normal"/>
-            <TextView
-                android:id="@+id/tv_answ"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_margin="@dimen/text_margin"
-                android:textSize="@dimen/textSize_normal"
-                android:maxLines="24"
-                android:ellipsize="end"/>
+        </android.support.v7.widget.CardView>
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/tv_intr"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/textSize_title"/>
+        <TextView
+            android:id="@+id/tv_ques"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/textSize_normal"/>
+        <TextView
+            android:id="@+id/tv_answ"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/textSize_normal"
+            android:maxLines="24"
+            android:ellipsize="end"/>
         </LinearLayout>
-
+        </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

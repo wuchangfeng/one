@@ -14,4 +14,19 @@
         <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <!--This theme for toolbar just like zhihu-->
+    <style name="GalaxyZooThemeToolbarDarkOverflow" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <!-- toolbar弹出菜单样式 -->
+    <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat">
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/blueStatus</item>
+        <item name="android:textStyle">normal</item>
+    </style>
 </resources>

@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -113,7 +112,6 @@ public class ArtDetailActivity extends BaseActivity {
             .into(mImageView);
         // TODO: 2016/7/16 Bug here 
         mTextView.setText(mArticle.getDetail());
-        Log.d(TAG,mArticle.getDetail().trim());
     }
 
     @Override

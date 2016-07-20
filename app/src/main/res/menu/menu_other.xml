@@ -2,10 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.wu.allen.myone.ui.activity.MainActivity" >
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_check"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
     <item android:id="@+id/action_save"
         android:title="@string/action_save"
         android:orderInCategory="101"
@@ -14,4 +10,14 @@
         android:title="@string/action_about"
         android:orderInCategory="102"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_notification"
+        android:orderInCategory="103"
+        android:title="@string/action_notification"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="104"
+        android:title="@string/action_search"
+        app:showAsAction="never"/>
 </menu>

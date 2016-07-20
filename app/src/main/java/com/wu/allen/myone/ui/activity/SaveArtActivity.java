@@ -61,6 +61,12 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
                 return false;
             }
         });
+        mSaveAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                ToastUtil.showLong(SaveArtActivity.this,"can intent");
+            }
+        });
     }
 
     private void QueryArticle() {

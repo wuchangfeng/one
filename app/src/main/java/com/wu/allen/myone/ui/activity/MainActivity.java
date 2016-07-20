@@ -8,7 +8,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
 import com.nispok.snackbar.Snackbar;
 import com.nispok.snackbar.SnackbarManager;
@@ -19,6 +19,7 @@ import com.wu.allen.myone.ui.fragment.OneImgFragment;
 import com.wu.allen.myone.ui.fragment.QaFragment;
 import com.wu.allen.myone.ui.fragment.SuJinFragment;
 import com.wu.allen.myone.utils.NetWorkUtil;
+import com.wu.allen.myone.utils.ToastUtil;
 import java.util.List;
 
 import static com.wu.allen.myone.R.id.toolbar;
@@ -44,7 +45,7 @@ public class MainActivity extends BaseActivity {
     public void initIntent(){
         if(!NetWorkUtil.isNetworkConnected(this)||
             !NetWorkUtil.isWifiConnected(this)){
-            // TODO: 2016/7/16 可以将 progressbar 也去掉 easyrecyclerview
+            // TODO: 2016/7/16
             SnackbarManager.show(
                 Snackbar.with(getApplicationContext())
                     .text(getString(R.string.no_net))
@@ -65,7 +66,27 @@ public class MainActivity extends BaseActivity {
     public void initView(){
         mToolbar = (Toolbar) findViewById(toolbar);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        setSupportActionBar(mToolbar);
+        mToolbar.setLogo(R.mipmap.ic_launcher);
+        mToolbar.inflateMenu(R.menu.menu_toolbar);
+        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int menuItemId = item.getItemId();
+                if (menuItemId == R.id.action_search) {
+                    ToastUtil.showLong(getApplicationContext(),"search");
+                } else if (menuItemId == R.id.action_notification) {
+                    ToastUtil.showLong(getApplicationContext(),"tongzhi");
+                }else if(menuItemId == R.id.action_save){
+                    Intent intent = new Intent(MainActivity.this,SaveArtActivity.class);
+                    startActivity(intent);
+                    Log.d(TAG,"save");
+                }else if(menuItemId == R.id.action_about){
+                    Intent intent = new Intent(MainActivity.this,AboutActivity.class);
+                    startActivity(intent);
+                }
+                return true;
+            }
+        });
     }
 
 
@@ -113,29 +134,5 @@ public class MainActivity extends BaseActivity {
             }
         });
         tabLayout.setupWithViewPager(viewPager);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }else if(id == R.id.action_save){
-            Intent intent = new Intent(MainActivity.this,SaveArtActivity.class);
-                    startActivity(intent);
-        }else if (id == R.id.action_about){
-            Intent intent = new Intent(MainActivity.this,AboutActivity.class);
-                    startActivity(intent);
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
