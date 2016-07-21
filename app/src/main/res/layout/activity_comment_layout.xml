@@ -1,0 +1,60 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/background_material_light">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:popupTheme="@style/ToolbarPopupTheme"
+            android:theme="@style/GalaxyZooThemeToolbarDarkOverflow"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/blueStatus"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/contentRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_comments"
+        android:elevation="@dimen/margin_8"
+        android:orientation="vertical">
+
+        <com.jude.easyrecyclerview.EasyRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="none"
+            app:layout_empty="@layout/view_empty"
+            />
+
+        <LinearLayout
+            android:id="@+id/llAddComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_comments"
+            android:elevation="@dimen/margin_8">
+
+            <EditText
+                android:id="@+id/edtComment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnSendComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="sendBtnListener"
+                android:text="Send" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

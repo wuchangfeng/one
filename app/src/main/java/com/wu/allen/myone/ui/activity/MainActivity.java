@@ -8,7 +8,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import com.nispok.snackbar.Snackbar;
 import com.nispok.snackbar.SnackbarManager;
@@ -45,7 +44,6 @@ public class MainActivity extends BaseActivity {
     public void initIntent(){
         if(!NetWorkUtil.isNetworkConnected(this)||
             !NetWorkUtil.isWifiConnected(this)){
-            // TODO: 2016/7/16
             SnackbarManager.show(
                 Snackbar.with(getApplicationContext())
                     .text(getString(R.string.no_net))
@@ -66,20 +64,18 @@ public class MainActivity extends BaseActivity {
     public void initView(){
         mToolbar = (Toolbar) findViewById(toolbar);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        mToolbar.setLogo(R.mipmap.ic_launcher);
+        mToolbar.setLogo(R.drawable.ic_account_circle_white_24dp);
+        mToolbar.setTitle(" ");
         mToolbar.inflateMenu(R.menu.menu_toolbar);
         mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 int menuItemId = item.getItemId();
                 if (menuItemId == R.id.action_search) {
-                    ToastUtil.showLong(getApplicationContext(),"search");
-                } else if (menuItemId == R.id.action_notification) {
-                    ToastUtil.showLong(getApplicationContext(),"tongzhi");
+                    ToastUtil.showLong(MainActivity.this,"还没想好怎么用,哈哈，只是为了 Toolbar 不那么单调！");
                 }else if(menuItemId == R.id.action_save){
                     Intent intent = new Intent(MainActivity.this,SaveArtActivity.class);
                     startActivity(intent);
-                    Log.d(TAG,"save");
                 }else if(menuItemId == R.id.action_about){
                     Intent intent = new Intent(MainActivity.this,AboutActivity.class);
                     startActivity(intent);

@@ -4,6 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_8">4dp</dimen>
     <dimen name="margin_10">10dp</dimen>
     <dimen name="margin_20">20dp</dimen>
     <dimen name="margin_37">37dp</dimen>

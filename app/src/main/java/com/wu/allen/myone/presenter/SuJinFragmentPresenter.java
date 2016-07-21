@@ -53,7 +53,8 @@ public class SuJinFragmentPresenter extends BaseFragmentPresenter {
                         String intr = avObject.getString("intr");
                         String img = avObject.getString("img");
                         String detail = avObject.getString("detail");
-                        article = new Article(title, intr, img, detail);
+                        String objectId = avObject.getObjectId();
+                        article = new Article(title, intr, img, detail,objectId);
                         articles.add(article);
                     }
                     mSuJinView.hideLoading();

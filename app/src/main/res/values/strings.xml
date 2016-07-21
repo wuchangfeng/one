@@ -28,10 +28,12 @@
     <string name="qa_comment">个评论</string>
     <string name="qa_focu">人喜欢</string>
     <!--for aboutactivity-->
-    <string name="app_intro">ZhuanLan Meizhi\nGitHub:https://github.com/wuchangfeng/ZhuanLan</string>
-    <string name="app_about">个人一个练手 App,主要学习 RxJava 和 Retrofit 以及基于 RxJava 的缓存技术以及一些常用开源库的使用。\n</string>
-    <string name="data_state">App 中的知乎专栏 API 为并非由知乎官方提供，侵权删。妹子图的 API 来自 Gank.io。\n感谢。</string>
-    <string name="open_source">开源库:\nrxjava\nretrofit\nokhttp\nPhotoView\nglide\neasyrecyclerview\ncom.nispok:snackbar\nom.afollestad.material-dialogs</string>
+    <string name="app_intro">One\nGitHub:https://github.com/wuchangfeng/One</string>
+    <string name="app_about">Contact\nQQ:437806668\nTelegram:@allenwu</string>
+    <string name="data_state">One 主要模仿韩寒主编的 One 软件。项目中的数据均由 Python 爬虫从几个网站获取,存储在
+    leanCloud 后端上。App 端采用 MVP+Dagger2 架构和用 Realm 作为本地数据库。数据的更新采用 LeanCloud 的定时函数进行定时抓取。</string>
+    <string name="open_source">感谢开源。项目中主要核心的开源控件即为 EasyRecyclerView 。高度解耦简洁。</string>
     <string name="you_like">兄弟好眼光</string>
+    <string name="comment_null">请输入评论内容</string>
 </resources>
 

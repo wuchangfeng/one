@@ -12,12 +12,14 @@ public class Article implements Serializable {
     private String intr;
     private String img;
     private String detail;
+    private String objectId;
 
-    public Article(String title, String intr, String img, String detail) {
+    public Article(String title, String intr, String img, String detail,String objectId) {
         this.title = title;
         this.intr = intr;
         this.img = img;
         this.detail = detail;
+        this.objectId = objectId;
     }
 
     public String getTitle() {
@@ -53,6 +55,15 @@ public class Article implements Serializable {
 
     public Article setDetail(String detail) {
         this.detail = detail;
+        return this;
+    }
+
+    public String getObjectId() {
+        return objectId;
+    }
+
+    public Article setObjectId(String objectId) {
+        this.objectId = objectId;
         return this;
     }
 }

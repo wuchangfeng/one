@@ -1,5 +1,6 @@
 package com.wu.allen.myone.adapter.viewholder;
 
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -9,6 +10,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.Article;
+import com.wu.allen.myone.ui.activity.CommentsActivity;
 import com.wu.allen.myone.utils.RanNumUtil;
 import com.wu.allen.myone.utils.ToastUtil;
 
@@ -58,8 +60,9 @@ public class SuJinViewHolder extends BaseViewHolder<Article>{
         comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: 2016/7/20 跳转到评论界面，这里应该比较复杂
-                ToastUtil.showLong(getContext(),"这里也 Intent 到评论界面");
+                Intent intent = new Intent(getContext(), CommentsActivity.class);
+                intent.putExtra("objectId",article.getObjectId());
+                getContext().startActivity(intent);
             }
         });
     }

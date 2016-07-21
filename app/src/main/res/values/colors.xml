@@ -21,4 +21,5 @@
     <color name="textPrimary">#212121</color>
     <color name="textSecondary">#727272</color>
     <color name="divider">#B6B6B6</color>
+    <color name="bg_comments">#ffffff</color>
 </resources>
