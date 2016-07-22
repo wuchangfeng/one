@@ -27,19 +27,14 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.menu_other, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }else if(id == R.id.action_save){
+        if(id == R.id.action_save){
 
         }else if (id == R.id.action_about){
 
@@ -51,5 +46,4 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected abstract  void setupFragmentComponent(AppComponent appComponent);
-
 }

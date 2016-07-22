@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.jude.swipbackhelper.SwipeBackHelper;
@@ -56,15 +57,33 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
         mSaveAdapter.setOnItemLongClickListener(new RecyclerArrayAdapter.OnItemLongClickListener() {
             @Override
             public boolean onItemClick(int position) {
-                // TODO: 2016/7/16 can delete the item of save artice and in realm also delete
-                ToastUtil.showLong(SaveArtActivity.this,"long click can delete this item");
-                return false;
+                DeleteArticle(position);// need in front of remove() method
+                mSaveAdapter.remove(position);
+                return true;
             }
         });
         mSaveAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                ToastUtil.showLong(SaveArtActivity.this,"can intent");
+                ToastUtil.showLong(SaveArtActivity.this,"Intent is very easy!");
+            }
+        });
+    }
+
+    /**
+     * after you long click the item ,the artile you save can delete from realm db
+     * @param position
+     */
+    private void DeleteArticle(final int position){
+        mRealm = Realm.getDefaultInstance();
+        mRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                RealmResults<ArticleSave> results = realm.where(ArticleSave.class)
+                    .equalTo("title",mSaveAdapter.getItem(position).getTitle())
+                    .findAll();
+                results.deleteFirstFromRealm();
+                Log.d(TAG,"delete success");
             }
         });
     }

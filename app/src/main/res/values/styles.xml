@@ -40,7 +40,7 @@
     <!--This theme for toolbar just like zhihu-->
     <style name="Theme.ZhiHu" parent="AppTheme.NoActionBar">
         <item name="actionMenuTextColor">@android:color/white</item>
-        <item name="android:src">@drawable/ic_menu_more_overflow</item>
+        <item name="android:src">@drawable/ic_menu_overflow</item>
     </style>
 
     <!--TextView-->

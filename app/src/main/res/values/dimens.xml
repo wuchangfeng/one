@@ -8,6 +8,8 @@
     <dimen name="margin_10">10dp</dimen>
     <dimen name="margin_20">20dp</dimen>
     <dimen name="margin_37">37dp</dimen>
+    <dimen name="margin_48">48dp</dimen>
+    <dimen name="margin_56">56dp</dimen>
     <dimen name="margin_left">16dp</dimen>
     <dimen name="margin_right">16dp</dimen>
     <dimen name="margin_cardview">8dp</dimen>
@@ -17,4 +19,6 @@
     <dimen name="artimg_height">184dp</dimen>
     <dimen name="oneimg_height">300dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="icon_button">24dp</dimen>
+
 </resources>

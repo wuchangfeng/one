@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 import com.jude.swipbackhelper.SwipeBackHelper;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.injector.components.AppComponent;
 import com.wu.allen.myone.model.Qa;
+import com.wu.allen.myone.utils.ToastUtil;
 
 /**
  * Created by allen on 2016/7/16.
@@ -73,5 +76,25 @@ public class QaDetailActivity extends BaseActivity {
     @Override
     protected void setupFragmentComponent(AppComponent appComponent) {
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_article_detail, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.action_like){
+            ToastUtil.showShort(QaDetailActivity.this,"Thank you for like it");
+        }else if (id == R.id.action_share){
+
+        }else if (id == android.R.id.home){
+            onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

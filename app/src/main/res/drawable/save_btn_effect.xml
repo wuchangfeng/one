@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_star_white_36dp" android:state_selected="true">
+    </item>
+    <item android:drawable="@drawable/ic_star_white_36dp" android:state_pressed="true">
+    </item>
+    <item android:drawable="@drawable/ic_star_border_white_36dp">
+    </item>
+</selector>

@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="48dp">
+    android:layout_height="@dimen/margin_48">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="网络错误,点击重试"/>
+        android:text="@string/net_error"/>
 </LinearLayout>

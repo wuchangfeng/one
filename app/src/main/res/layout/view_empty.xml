@@ -6,4 +6,4 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="18sp"
-        android:text="暂无数据"/>
+        android:text="@string/no_data"/>

@@ -11,11 +11,6 @@
         android:orderInCategory="102"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_notification"
-        android:orderInCategory="103"
-        android:title="@string/action_notification"
-        app:showAsAction="never"/>
-    <item
         android:id="@+id/action_search"
         android:orderInCategory="104"
         android:title="@string/action_search"

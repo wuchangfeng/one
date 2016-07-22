@@ -90,31 +90,40 @@
             android:layout_marginBottom="@dimen/margin_10"
             android:gravity="center_vertical"/>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true">
+            android:layout_marginBottom="@dimen/margin_10"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_like"
+                android:layout_width="@dimen/icon_button"
+                android:layout_height="@dimen/icon_button"
+                android:background="@drawable/ic_thumb_up_24dp"
+                />
 
             <TextView
                 android:id="@+id/tv_like"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:textColor="@color/blueStatus"
-                android:layout_marginBottom="@dimen/margin_10"
-                android:layout_marginRight="8dp"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginLeft="@dimen/margin_8"/>
+
+            <Button
+                android:id="@+id/btn_comment"
+                android:layout_width="@dimen/icon_button"
+                android:layout_height="@dimen/icon_button"
+                android:background="@drawable/ic_comment_24dp"
+                android:layout_marginLeft="@dimen/margin_10"/>
+
             <TextView
                 android:id="@+id/tv_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:textColor="@color/blueStatus"
-                android:layout_marginBottom="@dimen/margin_10"
-                android:layout_toEndOf="@id/tv_like"
-                android:layout_toRightOf="@id/tv_like"/>
-        </RelativeLayout>
+                android:layout_marginLeft="@dimen/margin_8"/>
+        </LinearLayout>
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

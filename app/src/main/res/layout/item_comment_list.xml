@@ -16,7 +16,7 @@
             android:layout_height="56dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:background="@mipmap/ic_launcher" />
+            android:background="@drawable/ic_account_circle_green_500_36dp" />
 
         <TextView
             android:id="@+id/tvComment"

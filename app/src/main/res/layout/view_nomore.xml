@@ -7,5 +7,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="(*￣ω￣) 没有更多了"/>
+        android:text="@string/no_more"/>
 </LinearLayout>

@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +20,7 @@ import com.wu.allen.myone.R;
 import com.wu.allen.myone.injector.components.AppComponent;
 import com.wu.allen.myone.model.Article;
 import com.wu.allen.myone.model.ArticleSave;
+import com.wu.allen.myone.utils.ToastUtil;
 import io.realm.Realm;
 
 
@@ -110,7 +113,6 @@ public class ArtDetailActivity extends BaseActivity {
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.SOURCE)
             .into(mImageView);
-        // TODO: 2016/7/16 Bug here 
         mTextView.setText(mArticle.getDetail());
     }
 
@@ -126,5 +128,25 @@ public class ArtDetailActivity extends BaseActivity {
         if(mRealm != null)
             mRealm.close();
         SwipeBackHelper.onDestroy(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_article_detail, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_share){
+
+        }else if (id == android.R.id.home){
+            onBackPressed();
+        }else {
+            ToastUtil.showShort(ArtDetailActivity.this,"thank you for like it");
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

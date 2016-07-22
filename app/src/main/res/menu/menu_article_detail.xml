@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.wu.allen.myone.ui.activity.MainActivity" >
+    <item android:id="@+id/action_share"
+        android:title="@string/action_share"
+        android:orderInCategory="101"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_like"
+        android:title="@string/action_like"
+        android:orderInCategory="102"
+        app:showAsAction="never" />
+</menu>

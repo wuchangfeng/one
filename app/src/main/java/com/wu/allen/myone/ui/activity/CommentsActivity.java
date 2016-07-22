@@ -85,6 +85,7 @@ public class CommentsActivity extends BaseActivity {
                     if (e == null) {
                         // clear Edittext after send comment success
                         mEditText.setText("");
+                        // TODO: 2016/7/22 bughere 
                     }
                 }
             });

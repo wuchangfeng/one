@@ -69,6 +69,6 @@
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@drawable/ic_star_border_white_24dp"/>
+        app:srcCompat="@drawable/save_btn_effect"/>
 
 </android.support.design.widget.CoordinatorLayout>

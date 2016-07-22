@@ -12,7 +12,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_android_green_a700_24dp"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:name=".MyApp"
         android:supportsRtl="true"
@@ -33,10 +33,12 @@
         </activity>
         <activity
             android:name=".ui.activity.SaveArtActivity"
+            android:label="@string/my_save"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name=".ui.activity.AboutActivity"
+            android:label="@string/about_app"
             android:theme="@style/ImageTranslucentTheme" >
         </activity>
         <activity
@@ -45,6 +47,7 @@
         </activity>
         <activity
             android:name=".ui.activity.CommentsActivity"
+            android:label="@string/comment_list"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>

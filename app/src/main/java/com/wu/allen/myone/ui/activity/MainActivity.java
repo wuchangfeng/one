@@ -72,7 +72,7 @@ public class MainActivity extends BaseActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 int menuItemId = item.getItemId();
                 if (menuItemId == R.id.action_search) {
-                    ToastUtil.showLong(MainActivity.this,"还没想好怎么用,哈哈，只是为了 Toolbar 不那么单调！");
+                    ToastUtil.showLong(MainActivity.this,getResources().getString(R.string.search_undone));
                 }else if(menuItemId == R.id.action_save){
                     Intent intent = new Intent(MainActivity.this,SaveArtActivity.class);
                     startActivity(intent);

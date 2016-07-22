@@ -19,8 +19,8 @@
     <string name="loading">loading</string>
     <string name="lable">问答</string>
     <string name="hot_article">热门文章</string>
-    <string name="save_ok">保存成功</string>
-    <string name="save_error">保存失败</string>
+    <string name="save_ok">收藏成功</string>
+    <string name="save_error">收藏失败,是不是收藏过了？</string>
     <string name="no_net">没有网络,去看看收藏的？</string>
     <string name="go_save">Go</string>
     <string name="art_comment">个评论</string>
@@ -32,8 +32,21 @@
     <string name="app_about">Contact\nQQ:437806668\nTelegram:@allenwu</string>
     <string name="data_state">One 主要模仿韩寒主编的 One 软件。项目中的数据均由 Python 爬虫从几个网站获取,存储在
     leanCloud 后端上。App 端采用 MVP+Dagger2 架构和用 Realm 作为本地数据库。数据的更新采用 LeanCloud 的定时函数进行定时抓取。</string>
-    <string name="open_source">感谢开源。项目中主要核心的开源控件即为 EasyRecyclerView 。高度解耦简洁。</string>
+    <string name="open_source">项目中主要核心为：\nEasyRecyclerView：高度解耦简洁\nGlide：图片加载库\nDagger2：结合 MVP 来构成项目主要框架\nRealm：轻量级数据库\nSwipebackhelper：实现类微信侧滑退出效果\n感谢开源</string>
     <string name="you_like">兄弟好眼光</string>
     <string name="comment_null">请输入评论内容</string>
+    <string name="search_undone">还没想好怎么用,哈哈,只是为了 Toolbar 不那么单调！</string>
+    <!--for layout-->
+    <string name="no_more">没有更多内容</string>
+    <string name="no_data">暂无数据</string>
+    <string name="load_more">更多加载中……</string>
+    <string name="net_error">网络错误,请重试</string>
+    <!--for AndroidManifest-->
+    <string name="my_save">我的收藏</string>
+    <string name="about_app">关于</string>
+    <string name="comment_list">评论列表</string>
+    <!--for menu-->
+    <string name="action_share">分享</string>
+    <string name="action_like">喜欢</string>
 </resources>
 
