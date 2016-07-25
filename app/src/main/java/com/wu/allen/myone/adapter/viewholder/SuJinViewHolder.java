@@ -9,9 +9,8 @@ import android.widget.TextView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.SaveCallback;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
+import com.squareup.picasso.Picasso;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.Article;
 import com.wu.allen.myone.ui.activity.CommentsActivity;
@@ -31,7 +30,6 @@ public class SuJinViewHolder extends BaseViewHolder<Article>{
     private TextView comment;
     private Button btnLike,btnComment;
 
-
     public SuJinViewHolder(ViewGroup parent) {
         super(parent, R.layout.item_article_list);
         title = $(R.id.tv_title);
@@ -45,15 +43,13 @@ public class SuJinViewHolder extends BaseViewHolder<Article>{
 
     @Override
     public void setData(final Article article){
-        final String likeArt = getContext().getResources().getString(R.string.you_like);
         date.setText(article.getIntr());
         title.setText(article.getTitle());
         like.setText(article.getNumlike()+"");
         comment.setText(RanNumUtil.genNum()+"");
-        Glide.with(getContext())
+        Picasso.with(getContext())
             .load(article.getImg())
-            .centerCrop()
-            .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+            .noFade()
             .into(img);
         btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,8 +61,8 @@ public class SuJinViewHolder extends BaseViewHolder<Article>{
                         likeNum.increment("numlike");
                         likeNum.setFetchWhenSave(true);
                         likeNum.saveInBackground();
-                        like.setText(likeNum.get("numlike")+"");
                         btnLike.setBackgroundResource(R.drawable.ic_thumb_up_red_24dp);
+                        like.setText(article.getNumlike()+"");
                     }
                 });
             }
