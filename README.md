@@ -10,7 +10,7 @@
 ### Sample
 [戳这里体验一下](http://fir.im/MyOne)
 
-### contribution
+### Contribution
 由于自己暑期实习不是 Android 开发这块。所以并不能把大量时间花在这上面。项目虽然主体架构以及主要功能完成,但是可以扩展的地方蛮多的:
 
 * 夜间模式以及主体换肤,这一块可能稍微麻烦点，因为要配置一些暗黑图标字体等。[AppCompat v23.2 - 夜间模式最佳实践](https://kingideayou.github.io/2016/03/07/appcompat_23.2_day_night/)
