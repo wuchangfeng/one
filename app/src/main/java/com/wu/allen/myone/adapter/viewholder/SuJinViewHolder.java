@@ -46,6 +46,7 @@ public class SuJinViewHolder extends BaseViewHolder<Article>{
         final String likeArt = getContext().getResources().getString(R.string.you_like);
         date.setText(article.getIntr());
         title.setText(article.getTitle());
+        // TODO: 2016/7/23 改成点击效果 
         like.setText(RanNumUtil.genNum()+"");
         comment.setText(RanNumUtil.genNum()+"");
         Glide.with(getContext())
