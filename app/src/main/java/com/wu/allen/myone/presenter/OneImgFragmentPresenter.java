@@ -54,6 +54,7 @@ public class OneImgFragmentPresenter extends BaseFragmentPresenter  {
                     }
                     mIOneView.fillData(ones);
                 } else {
+                    mIOneView.errorLayoutShow();
                     Log.d("OneImgFragmentPresenter",e.getMessage());
                 }
             }

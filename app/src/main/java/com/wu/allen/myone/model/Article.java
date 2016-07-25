@@ -12,14 +12,16 @@ public class Article implements Serializable {
     private String intr;
     private String img;
     private String detail;
+    private Integer numlike;
     private String objectId;
 
-    public Article(String title, String intr, String img, String detail,String objectId) {
+    public Article(String title, String intr, String img, String detail,String objectId,Integer numlike) {
         this.title = title;
         this.intr = intr;
         this.img = img;
         this.detail = detail;
         this.objectId = objectId;
+        this.numlike = numlike;
     }
 
     public String getTitle() {
@@ -64,6 +66,15 @@ public class Article implements Serializable {
 
     public Article setObjectId(String objectId) {
         this.objectId = objectId;
+        return this;
+    }
+
+    public Integer getNumlike() {
+        return numlike;
+    }
+
+    public Article setNumlike(Integer numlike) {
+        this.numlike = numlike;
         return this;
     }
 }

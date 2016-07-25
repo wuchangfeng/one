@@ -41,6 +41,7 @@
     <string name="no_data">暂无数据</string>
     <string name="load_more">更多加载中……</string>
     <string name="net_error">网络错误,请重试</string>
+    <string name="error_happen">网络错误,检查一下哈</string>
     <!--for AndroidManifest-->
     <string name="my_save">我的收藏</string>
     <string name="about_app">关于</string>

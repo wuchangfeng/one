@@ -7,7 +7,7 @@ import java.util.List;
  * Created by allen on 2016/7/15.
  */
 
-public interface IOneView {
+public interface IOneView extends IBaseView{
 
     void showLoading();
 

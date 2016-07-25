@@ -6,6 +6,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.SaveCallback;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
@@ -13,7 +16,6 @@ import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.Article;
 import com.wu.allen.myone.ui.activity.CommentsActivity;
 import com.wu.allen.myone.utils.RanNumUtil;
-import com.wu.allen.myone.utils.ToastUtil;
 
 /**
  * Created by allen on 2016/7/14.
@@ -46,32 +48,27 @@ public class SuJinViewHolder extends BaseViewHolder<Article>{
         final String likeArt = getContext().getResources().getString(R.string.you_like);
         date.setText(article.getIntr());
         title.setText(article.getTitle());
-        // TODO: 2016/7/23 改成点击效果 
-        like.setText(RanNumUtil.genNum()+"");
+        like.setText(article.getNumlike()+"");
         comment.setText(RanNumUtil.genNum()+"");
         Glide.with(getContext())
             .load(article.getImg())
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.SOURCE)
             .into(img);
-        like.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ToastUtil.showLong(getContext(),likeArt);
-            }
-        });
         btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastUtil.showLong(getContext(),likeArt);
-            }
-        });
-        comment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), CommentsActivity.class);
-                intent.putExtra("objectId",article.getObjectId());
-                getContext().startActivity(intent);
+                final AVObject likeNum = AVObject.createWithoutData("Content", article.getObjectId());
+                likeNum.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(AVException e) {
+                        likeNum.increment("numlike");
+                        likeNum.setFetchWhenSave(true);
+                        likeNum.saveInBackground();
+                        like.setText(likeNum.get("numlike")+"");
+                        btnLike.setBackgroundResource(R.drawable.ic_thumb_up_red_24dp);
+                    }
+                });
             }
         });
         btnComment.setOnClickListener(new View.OnClickListener() {

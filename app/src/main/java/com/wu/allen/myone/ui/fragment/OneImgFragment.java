@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.wu.allen.myone.R;
@@ -31,6 +32,7 @@ public class OneImgFragment extends BaseFragment implements IOneView{
     private static final String TAG = "OneImgFragment";
     private EasyRecyclerView mRecyclerView;
     private OneImgAdapter mOneImgAdapter;
+    private LinearLayout mLinearLayout;
     private Handler handler = new Handler();
     private int page = 0;
 
@@ -46,6 +48,7 @@ public class OneImgFragment extends BaseFragment implements IOneView{
 
     private void initView(View view){
         mRecyclerView = (EasyRecyclerView) view.findViewById(recyclerView);
+        mLinearLayout = (LinearLayout)view.findViewById(R.id.no_network);
         // TODO: 2016/7/16 Adapter can be set in Presenter also
         mOneImgAdapter = new OneImgAdapter(getActivity());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -109,6 +112,11 @@ public class OneImgFragment extends BaseFragment implements IOneView{
     @Override
     public void hideLoading() {
         // EasyRecyclerView has done this for us
+    }
+
+    @Override
+    public void errorLayoutShow() {
+        mLinearLayout.setVisibility(View.VISIBLE);
     }
 
     @Override

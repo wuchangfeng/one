@@ -5,4 +5,6 @@ package com.wu.allen.myone.view;
  */
 
 public interface IBaseView {
+
+    void errorLayoutShow();
 }

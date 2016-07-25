@@ -60,6 +60,7 @@ public class QaFragmentPresenter extends BaseFragmentPresenter  {
                     }
                     mIQaView.fillData(qas);
                 } else {
+                    mIQaView.errorLayoutShow();
                     Log.d("QaFragmentPresenter",e.getMessage());
                 }
             }

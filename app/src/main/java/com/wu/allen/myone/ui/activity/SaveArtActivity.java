@@ -131,6 +131,11 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
     }
 
     @Override
+    public void errorLayoutShow() {
+
+    }
+
+    @Override
     protected void setupFragmentComponent(AppComponent appComponent) {
 
     }

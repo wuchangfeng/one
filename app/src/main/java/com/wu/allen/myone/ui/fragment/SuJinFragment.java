@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.wu.allen.myone.R;
@@ -31,6 +32,7 @@ public class SuJinFragment extends BaseFragment implements ISuJinView{
     private static final String TAG = "SuJinFragment";
     private EasyRecyclerView mRecyclerView;
     private SuJinAdapter mSuJinAdapter;
+    private LinearLayout mLinearLayout;
     private Handler handler = new Handler();
     private int page = 0;
 
@@ -47,6 +49,7 @@ public class SuJinFragment extends BaseFragment implements ISuJinView{
 
     private void initView(View view){
         mRecyclerView = (EasyRecyclerView) view.findViewById(recyclerView);
+        mLinearLayout = (LinearLayout) view.findViewById(R.id.no_network);
         mSuJinAdapter = new SuJinAdapter(getActivity());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapterWithProgress(mSuJinAdapter);
@@ -109,6 +112,11 @@ public class SuJinFragment extends BaseFragment implements ISuJinView{
     @Override
     public void hideLoading() {
 
+    }
+
+    @Override
+    public void errorLayoutShow() {
+        mLinearLayout.setVisibility(View.VISIBLE);
     }
 
     @Override

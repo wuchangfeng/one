@@ -54,12 +54,14 @@ public class SuJinFragmentPresenter extends BaseFragmentPresenter {
                         String img = avObject.getString("img");
                         String detail = avObject.getString("detail");
                         String objectId = avObject.getObjectId();
-                        article = new Article(title, intr, img, detail,objectId);
+                        Integer numLike =avObject.getInt("numlike");
+                        article = new Article(title, intr, img, detail,objectId,numLike);
                         articles.add(article);
                     }
                     mSuJinView.hideLoading();
                     mSuJinView.fillData(articles);
                 } else {
+                    mSuJinView.errorLayoutShow();
                     Log.d("SuJinFragmentPresenter",e.getMessage());
                 }
             }

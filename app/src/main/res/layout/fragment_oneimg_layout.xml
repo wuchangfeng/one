@@ -4,6 +4,27 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <!--for error layout-->
+    <LinearLayout
+        android:id="@+id/no_network"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:src="@drawable/error_logo"
+            app:civ_border_color="#666666"
+            app:civ_border_width="1dp"
+            android:layout_marginTop="130dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <TextView
+            android:text="@string/error_happen"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
     <com.jude.easyrecyclerview.EasyRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

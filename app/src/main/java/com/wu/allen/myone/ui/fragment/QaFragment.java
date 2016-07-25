@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.wu.allen.myone.R;
@@ -32,6 +33,7 @@ public class QaFragment extends BaseFragment implements IQaView{
     private static final String TAG = "QaFragment";
     private EasyRecyclerView mRecyclerView;
     private QaAdapter mQaAdapter;
+    private LinearLayout mLinearLayout;
     private Handler handler = new Handler();
     private int page = 0;
 
@@ -40,14 +42,14 @@ public class QaFragment extends BaseFragment implements IQaView{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_oneimg_layout, container, false);
-        Log.d(TAG,"oncreateView");
+        View view = inflater.inflate(R.layout.fragment_qa_layout, container, false);
         initView(view);
         return view;
     }
 
     private void initView(View view){
         mRecyclerView = (EasyRecyclerView) view.findViewById(recyclerView);
+        mLinearLayout = (LinearLayout)view.findViewById(R.id.no_network);
         // TODO: 2016/7/16 can add Adapter to p
         mQaAdapter = new QaAdapter(getActivity());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -112,6 +114,11 @@ public class QaFragment extends BaseFragment implements IQaView{
     @Override
     public void hideLoading() {
         Log.d(TAG,"hideloading is ok");
+    }
+
+    @Override
+    public void errorLayoutShow() {
+        mLinearLayout.setVisibility(View.VISIBLE);
     }
 
     @Override
