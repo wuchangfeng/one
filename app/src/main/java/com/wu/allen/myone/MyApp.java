@@ -3,6 +3,7 @@ package com.wu.allen.myone;
 import android.app.Application;
 import android.content.Context;
 import com.avos.avoscloud.AVOSCloud;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.wu.allen.myone.config.AppConstant;
 import com.wu.allen.myone.injector.components.AppComponent;
 import com.wu.allen.myone.injector.components.DaggerAppComponent;
@@ -25,6 +26,9 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        // for bugly
+        CrashReport.initCrashReport(getApplicationContext(), AppConstant.BUGLYID, false);
+
         // for leancloud
         AVOSCloud.initialize(this, AppConstant.LEANCLOUDKEY,AppConstant.LEANCLOUDSERCERT);
 
