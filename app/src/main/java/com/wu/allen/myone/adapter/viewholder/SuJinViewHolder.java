@@ -15,6 +15,7 @@ import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.Article;
 import com.wu.allen.myone.ui.activity.CommentsActivity;
 import com.wu.allen.myone.utils.RanNumUtil;
+import com.wu.allen.myone.utils.ToastUtil;
 
 /**
  * Created by allen on 2016/7/14.
@@ -63,6 +64,7 @@ public class SuJinViewHolder extends BaseViewHolder<Article>{
                         likeNum.saveInBackground();
                         btnLike.setBackgroundResource(R.drawable.ic_thumb_up_red_24dp);
                         like.setText(article.getNumlike()+"");
+                        ToastUtil.showLong(getContext(),"like!");
                     }
                 });
             }

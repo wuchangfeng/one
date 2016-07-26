@@ -85,8 +85,8 @@ public class SuJinFragment extends BaseFragment implements ISuJinView{
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mSuJinFragmentPresenter.onCreate(page);
                 page++;
+                mSuJinFragmentPresenter.onCreate(page);
             }
         }, 1000);
     }

@@ -85,8 +85,8 @@ public class OneImgFragment extends BaseFragment implements IOneView{
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mOneImgFragmentPresenter.onCreate(page);
                 page++;
+                mOneImgFragmentPresenter.onCreate(page);
             }
         }, 1000);
     }

@@ -87,8 +87,8 @@ public class QaFragment extends BaseFragment implements IQaView{
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mQaFragmentPresenter.onCreate(page);
                 page++;
+                mQaFragmentPresenter.onCreate(page);
             }
         }, 1000);
     }

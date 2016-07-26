@@ -6,8 +6,8 @@ package com.wu.allen.myone.config;
 
 public class AppConstant {
     // leancloud key and id
-    public static final String LEANCLOUDKEY = "xxxx";
-    public static final String LEANCLOUDSERCERT = "xxxx";
+    public static final String LEANCLOUDKEY = "XXXX";
+    public static final String LEANCLOUDSERCERT = "XXXX";
     // bugly id
-    public static final String BUGLYID = "xxxx";
+    public static final String BUGLYID = "XXXX";
 }

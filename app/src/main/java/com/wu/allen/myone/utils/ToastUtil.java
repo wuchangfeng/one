@@ -8,12 +8,24 @@ import android.widget.Toast;
  */
 
 public class ToastUtil {
+
+    public static Toast sToast;
     // shortTime
     public static void showShort(Context context, String info) {
-        Toast.makeText(context, info, Toast.LENGTH_SHORT).show();
+        if (sToast == null){
+            sToast = Toast.makeText(context, info, Toast.LENGTH_SHORT);
+        }else{
+            sToast.setText(info);
+        }
+        sToast.show();
     }
     // LongTime
     public static void showLong(Context context, String info) {
-        Toast.makeText(context, info, Toast.LENGTH_LONG).show();
+        if (sToast == null){
+            sToast = Toast.makeText(context, info, Toast.LENGTH_LONG);
+        }else{
+            sToast.setText(info);
+        }
+        sToast.show();
     }
 }
