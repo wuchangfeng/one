@@ -2,6 +2,7 @@
 
 * 该应用内容灵感来源于 One 应用。界面设计为自己所构思,遵循 Materfial Design 风格。App 端项目的主体架构为 MVP + Dagger2 , 用 Realm 作为本地数据库存储。后台数据是来自于 One 官方网站以及素锦网站,用 Python 爬虫爬取存储在 LeanCloud 后台。
 * 如果你有兴趣 Clone 代码,需要注册申请 LeanCloud 的 ID 和 Key 以及 Bugly 的 ID 填入到 AppConstant 中。当然 Python 爬虫代码也需要填入 key 和 ID 。
+* 项目是我实习期间,每天下班自己利用晚上休息时间写一点。但是后来越来越控制不住，越写越多。所以将其开源出来。
 
 ### Crawler
 爬虫代码你可以在这里看到:
