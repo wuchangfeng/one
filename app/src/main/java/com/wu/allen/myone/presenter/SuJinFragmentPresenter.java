@@ -40,7 +40,7 @@ public class SuJinFragmentPresenter extends BaseFragmentPresenter {
     private void getArticle(int page) {
         mSuJinView.showLoading();
         AVQuery<AVObject> query = AVQuery.getQuery("Content");
-        query.orderByDescending("index");
+        query.orderByDescending("createdAt");
         query.setLimit(10);
         query.setSkip(page * 10);
         query.findInBackground(new FindCallback<AVObject>() {

@@ -55,16 +55,40 @@ public class SuJinViewHolder extends BaseViewHolder<Article>{
         btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /**
+                like.setText(" "+(article.getNumlike()+1));
+                btnLike.setBackgroundResource(R.drawable.ic_thumb_up_red_24dp);
                 final AVObject likeNum = AVObject.createWithoutData("Content", article.getObjectId());
                 likeNum.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(AVException e) {
-                        likeNum.increment("numlike");
-                        likeNum.setFetchWhenSave(true);
-                        likeNum.saveInBackground();
-                        btnLike.setBackgroundResource(R.drawable.ic_thumb_up_red_24dp);
-                        like.setText(article.getNumlike()+"");
-                        ToastUtil.showLong(getContext(),"like!");
+                            likeNum.increment("numlike");
+                            likeNum.setFetchWhenSave(true);
+                            likeNum.saveInBackground();
+                            ToastUtil.showLong(getContext(), "like!");
+                    }
+                });
+                */
+                like.setText(" "+(article.getNumlike()+1));
+                btnLike.setBackgroundResource(R.drawable.ic_thumb_up_red_24dp);
+                final AVObject likeNum = AVObject.createWithoutData("Content", article.getObjectId());
+                likeNum.put("numlike", article.getNumlike()+1);
+                likeNum.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(AVException e) {
+                        if (e == null) {
+                            ToastUtil.showLong(getContext(), "赞");
+                        } else {
+                            // 模拟一个延时效果
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException s) {
+                                s.printStackTrace();
+                            }
+                            like.setText(" "+(article.getNumlike()));
+                            btnLike.setBackgroundResource(R.drawable.ic_thumb_up_24dp);
+                            ToastUtil.showLong(getContext(), "没有网络");
+                        }
                     }
                 });
             }

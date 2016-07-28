@@ -43,7 +43,7 @@ public class QaFragmentPresenter extends BaseFragmentPresenter  {
     private void getArticle(int page) {
         mIQaView.hideLoading();
         AVQuery<AVObject> query = AVQuery.getQuery("OneQa");
-        query.orderByDescending("index");
+        query.orderByDescending("createdAt");
         query.setLimit(10);
         query.setSkip(page * 10);
         query.findInBackground(new FindCallback<AVObject>() {

@@ -90,7 +90,7 @@ public class QaDetailActivity extends BaseActivity {
         if(id == R.id.action_like){
             ToastUtil.showShort(QaDetailActivity.this,"Thank you for like it");
         }else if (id == R.id.action_share){
-
+            ToastUtil.showShort(QaDetailActivity.this,"Thank you for share it");
         }else if (id == android.R.id.home){
             onBackPressed();
         }
