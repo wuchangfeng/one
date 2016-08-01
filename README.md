@@ -32,6 +32,10 @@
 * SwipeBackHelper 实现类微信的侧滑返回效果。
 * Bugly 腾讯的远程 Bugly 统计,实时监控你的应用异常信息。
 
+### Change Log
+
+[点击这里查看更新历史](https://github.com/wuchangfeng/One/wiki)
+
 ### ScreenShot
 
 ![](http://ww4.sinaimg.cn/large/b10d1ea5gw1f668agtzr0j206z0dx75c.jpg)
