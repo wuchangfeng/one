@@ -11,11 +11,13 @@ public class Qa implements Serializable {
     private String qaIntr;
     private String qaDetail;
     private String qaAnsw;
+    private String objectId;
 
-    public Qa(String qaIntr, String qaDetail, String qaAnsw) {
+    public Qa(String qaIntr, String qaDetail, String qaAnsw,String objectId) {
         this.qaIntr = qaIntr;
         this.qaDetail = qaDetail;
         this.qaAnsw = qaAnsw;
+        this.objectId = objectId;
     }
 
     public String getQaIntr() {
@@ -42,6 +44,15 @@ public class Qa implements Serializable {
 
     public Qa setQaAnsw(String qaAnsw) {
         this.qaAnsw = qaAnsw;
+        return this;
+    }
+
+    public String getObjectId() {
+        return objectId;
+    }
+
+    public Qa setObjectId(String objectId) {
+        this.objectId = objectId;
         return this;
     }
 }

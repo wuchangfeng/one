@@ -23,10 +23,14 @@
                 <TextView
                     android:id="@+id/tv_lable"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="6dp"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:textColor="#0077d9"
+                    android:background="#eff6fa"
                     android:text="@string/lable"
+                    style="@style/TextAppearance.AppCompat.Body1"
                     />
             </RelativeLayout>
 
@@ -45,6 +49,7 @@
             android:id="@+id/tv_ques"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:lineSpacingExtra="6dp"
             android:textSize="@dimen/textSize_small"
             android:layout_marginTop="@dimen/margin_4"
             android:ellipsize="end"/>

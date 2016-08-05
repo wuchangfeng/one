@@ -20,5 +20,7 @@
     <dimen name="oneimg_height">300dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="icon_button">24dp</dimen>
+    <dimen name="img_dialog_height">350dp</dimen>
+    <dimen name="img_dialog_width">450dp</dimen>
 
 </resources>

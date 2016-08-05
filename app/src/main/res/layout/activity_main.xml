@@ -23,7 +23,8 @@
             android:layout_marginLeft="@dimen/margin_8"
             android:text="One"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
         </android.support.v7.widget.Toolbar>
 
         <android.support.design.widget.TabLayout

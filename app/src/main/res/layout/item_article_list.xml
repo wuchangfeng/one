@@ -8,10 +8,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_4"
         android:paddingRight="@dimen/margin_right"
         android:paddingLeft="@dimen/margin_left">
 
         <RelativeLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="32dp">
 
@@ -122,6 +124,21 @@
 
             <TextView
                 android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_8"/>
+
+            <Button
+                android:id="@+id/btn_share"
+                android:layout_width="@dimen/icon_button"
+                android:layout_height="@dimen/icon_button"
+                android:gravity="center_vertical"
+                android:background="@drawable/ic_share_24dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_share"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"

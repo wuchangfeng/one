@@ -7,9 +7,11 @@ package com.wu.allen.myone.model;
 public class Comment {
 
     private String comments;
+    private String date;
 
-    public Comment(String comments) {
+    public Comment(String comments,String date) {
         this.comments = comments;
+        this.date = date;
     }
 
     public String getComments() {
@@ -18,6 +20,15 @@ public class Comment {
 
     public Comment setComments(String comments) {
         this.comments = comments;
+        return this;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public Comment setDate(String date) {
+        this.date = date;
         return this;
     }
 }

@@ -33,9 +33,9 @@ public class ArtDetailActivity extends BaseActivity {
     private static final String TAG = "ArticleDetailActivity";
     private Article mArticle;
     private Intent mIntent;
-    private ImageView mImageView;
-    private TextView mTextView;
     private Realm mRealm;
+    private ImageView imgCover;
+    private TextView tvMainContent;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,9 +58,9 @@ public class ArtDetailActivity extends BaseActivity {
     }
 
     public void initView(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        mImageView = (ImageView) findViewById(R.id.iv_articlebg);
-        mTextView = (TextView) findViewById(R.id.tv_main);
+        Toolbar toolbar = $(R.id.toolbar);
+        imgCover = $(R.id.iv_articlebg);
+        tvMainContent = $(R.id.tv_main);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         CollapsingToolbarLayout mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
@@ -112,8 +112,8 @@ public class ArtDetailActivity extends BaseActivity {
             .load(mArticle.getImg())
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.SOURCE)
-            .into(mImageView);
-        mTextView.setText(mArticle.getDetail());
+            .into(imgCover);
+        tvMainContent.setText(mArticle.getDetail());
     }
 
     @Override
@@ -140,11 +140,11 @@ public class ArtDetailActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_share){
-
-        }else if (id == android.R.id.home){
-            onBackPressed();
-        }else {
+            ToastUtil.showShort(ArtDetailActivity.this,"thank you for share it");
+        }else if(id == R.id.action_like){
             ToastUtil.showShort(ArtDetailActivity.this,"thank you for like it");
+        }else{
+            onBackPressed();
         }
 
         return super.onOptionsItemSelected(item);

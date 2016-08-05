@@ -44,17 +44,19 @@
             android:elevation="@dimen/margin_8">
 
             <EditText
-                android:id="@+id/edtComment"
+                android:id="@+id/edt_comment"
                 android:layout_width="0dp"
+                android:textSize="@dimen/textSize_small"
                 android:layout_height="wrap_content"
+                android:hint="@string/edt_comment"
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/btnSendComment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btn_send_comment"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:onClick="sendBtnListener"
-                android:text="Send" />
+                android:background="@drawable/ic_send_blue_grey_700_36dp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

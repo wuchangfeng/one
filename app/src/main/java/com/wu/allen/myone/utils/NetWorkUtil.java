@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
  */
 
 public class NetWorkUtil {
+
     // NetWork is ok?
     public static boolean isNetworkConnected(Context context) {
         if (context != null) {
@@ -21,6 +22,7 @@ public class NetWorkUtil {
         }
         return false;
     }
+
     // WIFI is ok?
     public static boolean isWifiConnected(Context context) {
         if (context != null) {

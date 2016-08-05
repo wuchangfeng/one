@@ -26,11 +26,12 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         // for bugly
         CrashReport.initCrashReport(getApplicationContext(), AppConstant.BUGLYID, false);
 
         // for leancloud
-        AVOSCloud.initialize(this, AppConstant.LEANCLOUDKEY,AppConstant.LEANCLOUDSERCERT);
+        AVOSCloud.initialize(this, AppConstant.LEANCLOUD_KEY,AppConstant.LEANCLOUD_SERCERT);
 
         // for dagger2
         appComponent= DaggerAppComponent.builder()

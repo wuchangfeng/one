@@ -49,8 +49,6 @@
             android:layout_height="match_parent"
             android:textSize="@dimen/textSize_normal"
             android:textStyle="bold"
-            android:maxLines="4"
-            android:ellipsize="end"
             android:layout_marginTop="@dimen/margin_20"
             android:layout_marginBottom="@dimen/margin_20"/>
 

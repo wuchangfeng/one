@@ -2,7 +2,6 @@ package com.wu.allen.myone.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
 import com.jude.swipbackhelper.SwipeBackHelper;
 import com.wu.allen.myone.R;
@@ -11,18 +10,17 @@ import com.wu.allen.myone.injector.components.AppComponent;
 import static com.wu.allen.myone.R.id.toolbar;
 
 /**
- * Created by allen on 2016/7/16.
+ * Created by allen on 2016/8/3.
  */
 
-public class AboutActivity extends BaseActivity {
+public class SettingActivity extends BaseActivity {
 
-    private static final String TAG = "AboutActivity";
-    Toolbar mToolbar;
+    private Toolbar mToolbar;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_layout);
+        setContentView(R.layout.activity_comment_layout);
         SwipeBackHelper.onCreate(this);
         initView();
     }
@@ -31,8 +29,6 @@ public class AboutActivity extends BaseActivity {
         mToolbar = $(toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        CollapsingToolbarLayout collapsingToolbar =
-            (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
     }
 
     @Override

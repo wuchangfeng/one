@@ -6,8 +6,12 @@
         android:title="@string/action_save"
         android:orderInCategory="101"
         app:showAsAction="never" />
+    <item android:id="@+id/action_setting"
+        android:title="@string/action_set"
+        android:orderInCategory="102"
+        app:showAsAction="never" />
     <item android:id="@+id/action_about"
         android:title="@string/action_about"
-        android:orderInCategory="102"
+        android:orderInCategory="103"
         app:showAsAction="never" />
 </menu>

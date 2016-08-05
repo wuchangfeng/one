@@ -10,6 +10,7 @@ import android.widget.Toast;
 public class ToastUtil {
 
     public static Toast sToast;
+
     // shortTime
     public static void showShort(Context context, String info) {
         if (sToast == null){
@@ -19,6 +20,7 @@ public class ToastUtil {
         }
         sToast.show();
     }
+
     // LongTime
     public static void showLong(Context context, String info) {
         if (sToast == null){

@@ -55,7 +55,8 @@ public class QaFragmentPresenter extends BaseFragmentPresenter  {
                         String qaAnsw = avObject.getString("qaAnsw");
                         String qaDetail = avObject.getString("qaDetail");
                         String qaIntr = avObject.getString("qaIntr");
-                        qa = new Qa(qaIntr,qaDetail,qaAnsw);
+                        String obJectId = avObject.getObjectId();
+                        qa = new Qa(qaIntr,qaDetail,qaAnsw,obJectId);
                         qas.add(qa);
                     }
                     mIQaView.fillData(qas);

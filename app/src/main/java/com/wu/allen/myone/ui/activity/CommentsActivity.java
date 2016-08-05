@@ -21,6 +21,7 @@ import com.wu.allen.myone.R;
 import com.wu.allen.myone.adapter.CommentAdapter;
 import com.wu.allen.myone.injector.components.AppComponent;
 import com.wu.allen.myone.model.Comment;
+import com.wu.allen.myone.utils.DateUtil;
 import com.wu.allen.myone.utils.ToastUtil;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,13 +35,14 @@ import static com.wu.allen.myone.R.id.toolbar;
 
 public class CommentsActivity extends BaseActivity {
 
-    private String objectId;
+    private static final String TAG = "CommentsActivity";
+    private List<Comment> comments = new ArrayList<>();
+    private String objectId,typeTable,comment;
     private EasyRecyclerView mRecyclerView;
     private CommentAdapter mCommentAdapter;
-    private EditText mEditText;
-    private Button mButton;
+    private EditText edtComment;
+    private Button btnSend;
     private Toolbar mToolbar;
-    private List<Comment> comments = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,15 +57,17 @@ public class CommentsActivity extends BaseActivity {
     public void initData(){
         Intent intent = getIntent();
         objectId = intent.getStringExtra("objectId");
+        typeTable = intent.getStringExtra("type");
+        comment = intent.getStringExtra("comment");
     }
 
     public void initView(){
-        mToolbar = (Toolbar) findViewById(toolbar);
-        mEditText = (EditText) findViewById(R.id.edtComment);
-        mButton = (Button)findViewById(R.id.btnSendComment);
+        mToolbar = $(toolbar);
+        edtComment = $(R.id.edt_comment);
+        btnSend = $(R.id.btn_send_comment);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mRecyclerView = (EasyRecyclerView) findViewById(recyclerView);
+        mRecyclerView = $(recyclerView);
         mCommentAdapter = new CommentAdapter(this);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapterWithProgress(mCommentAdapter);
@@ -71,21 +75,20 @@ public class CommentsActivity extends BaseActivity {
     }
 
     public void sendBtnListener(View mButton){
-        String comments = mEditText.getText().toString();
+        String comments = edtComment.getText().toString();
         if(TextUtils.isEmpty(comments)){
             ToastUtil.showLong(CommentsActivity.this,getResources().getString(R.string.comment_null));
         }else{
-            AVObject article = AVObject.createWithoutData("Content", objectId);
-            AVObject comInsert = new AVObject("Comment");
+            AVObject article = AVObject.createWithoutData(typeTable, objectId);
+            AVObject comInsert = new AVObject(comment);
             comInsert.put("name", comments);
+            comInsert.put("date", DateUtil.getCurrentDate());
             comInsert.put("dependent", article);
             comInsert.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(AVException e) {
                     if (e == null) {
-                        // clear Edittext after send comment success
-                        mEditText.setText("");
-                        // TODO: 2016/7/22 bughere 
+                        edtComment.setText("");
                     }
                 }
             });
@@ -93,8 +96,8 @@ public class CommentsActivity extends BaseActivity {
     }
 
     public void QueryComment(){
-        AVObject article = AVObject.createWithoutData("Content", objectId);
-        AVQuery<AVObject> query = new AVQuery<>("Comment");
+        AVObject article = AVObject.createWithoutData(typeTable, objectId);
+        AVQuery<AVObject> query = new AVQuery<>(comment);
         query.whereEqualTo("dependent", article);
         query.findInBackground(new FindCallback<AVObject>() {
             @Override
@@ -103,7 +106,8 @@ public class CommentsActivity extends BaseActivity {
                 if(e == null){
                     for (AVObject avObject : list) {
                         String com = avObject.getString("name");
-                        comment = new Comment(com);
+                        String date = avObject.getString("date");
+                        comment = new Comment(com,date);
                         comments.add(comment);
                     }
                     mCommentAdapter.addAll(comments);

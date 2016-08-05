@@ -4,6 +4,7 @@
     <string name="action_check">夜间模式</string>
     <string name="action_save">收藏</string>
     <string name="action_about">关于</string>
+    <string name="action_set">设置</string>
     <string name="action_search">查找</string>
     <string name="action_notification">通知</string>
     <string name="menu_search">search</string>
@@ -27,6 +28,7 @@
     <string name="art_like">个喜欢</string>
     <string name="qa_comment">个评论</string>
     <string name="qa_focu">人喜欢</string>
+    <string name="like">赞</string>
     <!--for aboutactivity-->
     <string name="app_intro">One\nGitHub:https://github.com/wuchangfeng/One</string>
     <string name="app_about">Contact\nQQ:437806668\nTelegram:@allenwu</string>
@@ -49,5 +51,10 @@
     <!--for menu-->
     <string name="action_share">分享</string>
     <string name="action_like">喜欢</string>
+    <string name="edt_comment">请输入评论内容</string>
+    <!--for ShareUtil-->
+    <string name="share_img">分享美图</string>
+    <string name="share_article">分享文章</string>
+    <string name="share_link">链接已经拷贝成功啦.. ( ＞ω＜)</string>
 </resources>
 

@@ -16,26 +16,26 @@ import com.wu.allen.myone.model.ArticleSave;
 public class SaveViewHolder extends BaseViewHolder<ArticleSave> {
 
     private static final String TAG = "SuJinViewHolder";
-    private TextView title;
-    private ImageView img;
-    private TextView date;
+    private TextView tvTitle;
+    private ImageView imgCover;
+    private TextView tvDate;
 
 
     public SaveViewHolder(ViewGroup parent) {
         super(parent, R.layout.item_article_list);
-        title = $(R.id.tv_title);
-        img = $(R.id.iv_cover);
-        date = $(R.id.tv_date);
+        tvTitle = $(R.id.tv_title);
+        imgCover = $(R.id.iv_cover);
+        tvDate = $(R.id.tv_date);
     }
 
     @Override
     public void setData(final ArticleSave article){
-        date.setText(article.getIntr());
-        title.setText(article.getTitle());
+        tvDate.setText(article.getIntr());
+        tvTitle.setText(article.getTitle());
         Glide.with(getContext())
             .load(article.getImg())
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.SOURCE)
-            .into(img);
+            .into(imgCover);
     }
 }

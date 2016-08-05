@@ -41,6 +41,11 @@
             android:theme="@style/ImageTranslucentTheme" >
         </activity>
         <activity
+            android:name=".ui.activity.SettingActivity"
+            android:label="@string/action_set"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
             android:name=".ui.activity.QaDetailActivity"
             android:theme="@style/ImageTranslucentTheme" >
         </activity>

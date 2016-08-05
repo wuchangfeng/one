@@ -49,7 +49,6 @@ public class OneImgFragment extends BaseFragment implements IOneView{
     private void initView(View view){
         mRecyclerView = (EasyRecyclerView) view.findViewById(recyclerView);
         mLinearLayout = (LinearLayout)view.findViewById(R.id.no_network);
-        // TODO: 2016/7/16 Adapter can be set in Presenter also
         mOneImgAdapter = new OneImgAdapter(getActivity());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapterWithProgress(mOneImgAdapter);

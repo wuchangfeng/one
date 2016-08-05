@@ -1,9 +1,11 @@
 package com.wu.allen.myone.ui.activity;
 
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import com.wu.allen.myone.MyApp;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.injector.components.AppComponent;
@@ -23,6 +25,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    protected <T extends View> T $(@IdRes int id) {
+        return (T)findViewById(id);
     }
 
     @Override

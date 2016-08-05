@@ -19,17 +19,15 @@ import com.wu.allen.myone.ui.fragment.QaFragment;
 import com.wu.allen.myone.ui.fragment.SuJinFragment;
 import com.wu.allen.myone.utils.NetWorkUtil;
 import com.wu.allen.myone.utils.ToastUtil;
-import java.util.List;
 
 import static com.wu.allen.myone.R.id.toolbar;
 
 public class MainActivity extends BaseActivity {
 
     private static final String TAG = "MainActivity";
-    private TabLayout tabLayout;
+    private TabLayout mTabLayout;
     private Toolbar mToolbar;
-    private ViewPager viewPager;
-    private List<Fragment> fragments;
+    private ViewPager mViewPager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,8 +50,7 @@ public class MainActivity extends BaseActivity {
                     .actionListener(new ActionClickListener() {
                         @Override
                         public void onActionClicked(Snackbar snackbar) {
-                            Intent intent = new Intent(MainActivity.this,SaveArtActivity.class);
-                            startActivity(intent);
+                            startActivity(new Intent(MainActivity.this, SaveArtActivity.class));
                         }
                     })
                 , this);
@@ -62,9 +59,8 @@ public class MainActivity extends BaseActivity {
 
 
     public void initView(){
-        mToolbar = (Toolbar) findViewById(toolbar);
-        tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        mToolbar.setLogo(R.drawable.ic_account_circle_white_24dp);
+        mToolbar = $(toolbar);
+        mTabLayout = $(R.id.tab_layout);
         mToolbar.setTitle(" ");
         mToolbar.inflateMenu(R.menu.menu_toolbar);
         mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -72,13 +68,15 @@ public class MainActivity extends BaseActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 int menuItemId = item.getItemId();
                 if (menuItemId == R.id.action_search) {
-                    ToastUtil.showLong(MainActivity.this,getResources().getString(R.string.search_undone));
+                    ToastUtil.showShort(MainActivity.this,"next version");
+                    //ToastUtil.showLong(MainActivity.this,getResources().getString(R.string.search_undone));
                 }else if(menuItemId == R.id.action_save){
-                    Intent intent = new Intent(MainActivity.this,SaveArtActivity.class);
-                    startActivity(intent);
+                    startActivity(new Intent(MainActivity.this,SaveArtActivity.class));
+                }else if(menuItemId == R.id.action_setting){
+                    ToastUtil.showShort(MainActivity.this,"next version");
+                    //startActivity(new Intent(MainActivity.this,SettingActivity.class));
                 }else if(menuItemId == R.id.action_about){
-                    Intent intent = new Intent(MainActivity.this,AboutActivity.class);
-                    startActivity(intent);
+                    startActivity(new Intent(MainActivity.this,AboutActivity.class));
                 }
                 return true;
             }
@@ -93,9 +91,9 @@ public class MainActivity extends BaseActivity {
 
 
     public void switchToFragmnent() {
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        viewPager.setOffscreenPageLimit(3);
-        viewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
+        mViewPager = (ViewPager) findViewById(R.id.view_pager);
+        mViewPager.setOffscreenPageLimit(3);
+        mViewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
                 switch (position) {
@@ -129,6 +127,6 @@ public class MainActivity extends BaseActivity {
                 }
             }
         });
-        tabLayout.setupWithViewPager(viewPager);
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 }

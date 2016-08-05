@@ -16,34 +16,34 @@ import com.wu.allen.myone.utils.ToastUtil;
 public class QaViewHolder extends BaseViewHolder<Qa> {
 
     private static final String TAG = "QaViewHolder";
-    private TextView ques;
-    private TextView intr;
-    private TextView focu;
-    private TextView comment;
+    private TextView tvQues;
+    private TextView tvIntr;
+    private TextView tvFocu;
+    private TextView tvComment;
 
     public QaViewHolder(ViewGroup parent) {
         super(parent, R.layout.item_qa_list);
-        intr = $(R.id.tv_intr);
-        ques = $(R.id.tv_ques);
-        focu = $(R.id.tv_focu);
-        comment = $(R.id.tv_comment);
+        tvIntr = $(R.id.tv_intr);
+        tvQues = $(R.id.tv_ques);
+        tvFocu = $(R.id.tv_focu);
+        tvComment = $(R.id.tv_comment);
     }
 
     @Override
     public void setData(final Qa qa){
         String focuFormat = getContext().getResources().getString(R.string.qa_focu);
         String commentFormat = getContext().getResources().getString(R.string.qa_comment);
-        intr.setText(qa.getQaIntr().trim());
-        ques.setText(qa.getQaDetail().trim());
-        focu.setText(RanNumUtil.genNum()+focuFormat);
-        comment.setText(RanNumUtil.genNum()+commentFormat);
-        comment.setOnClickListener(new View.OnClickListener() {
+        tvIntr.setText(qa.getQaIntr().trim());
+        tvQues.setText(qa.getQaDetail().trim());
+        tvFocu.setText(RanNumUtil.genNum()+focuFormat);
+        tvComment.setText(RanNumUtil.genNum()+commentFormat);
+        tvComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ToastUtil.showLong(getContext(),"hello comment");
             }
         });
-        focu.setOnClickListener(new View.OnClickListener() {
+        tvFocu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ToastUtil.showLong(getContext(),"hello like");

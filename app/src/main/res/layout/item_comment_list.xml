@@ -6,32 +6,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp">
-
-        <ImageView
-            android:id="@+id/ivUserAvatar"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/ic_account_circle_green_500_36dp" />
-
+        android:orientation="vertical"
+        android:layout_margin="@dimen/margin_10"
+        android:paddingBottom="0dp">
         <TextView
-            android:id="@+id/tvComment"
-            android:layout_width="0dp"
+            android:id="@+id/tv_comment_detail"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/textSize_normal"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="16dp"
-            android:layout_weight="1"
-            android:text="Lorem ipsum dolor sit amet" />
+            />
+        <TextView
+            android:id="@+id/tv__comment_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            android:layout_gravity="right|center_vertical"
+            />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_gravity="bottom"
-        android:layout_marginLeft="88dp"
-        android:background="#cccccc" />
+        android:background="#eeeeee" />
 </FrameLayout>

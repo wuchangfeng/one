@@ -1,7 +1,6 @@
 package com.wu.allen.myone.ui.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -31,10 +30,7 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
     private static final String TAG = "SaveArtActivity";
     private EasyRecyclerView mRecyclerView;
     private SaveAdapter mSaveAdapter;
-    private Handler handler = new Handler();
-    private int page = 0;
     private Realm mRealm;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,10 +42,10 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
     }
 
     private void initView(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = $(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mRecyclerView = (EasyRecyclerView) findViewById(recyclerView);
+        mRecyclerView = $(recyclerView);
         mSaveAdapter = new SaveAdapter(this);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapterWithProgress(mSaveAdapter);
@@ -59,13 +55,14 @@ public class SaveArtActivity extends BaseActivity implements ISaveView {
             public boolean onItemClick(int position) {
                 DeleteArticle(position);// need in front of remove() method
                 mSaveAdapter.remove(position);
+                ToastUtil.showLong(SaveArtActivity.this,"Delete success!");
                 return true;
             }
         });
         mSaveAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                ToastUtil.showLong(SaveArtActivity.this,"Intent is very easy!");
+                ToastUtil.showLong(SaveArtActivity.this,"Long Click can delete!");
             }
         });
     }
