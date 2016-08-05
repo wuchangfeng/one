@@ -9,19 +9,18 @@
 爬虫代码你可以在这里看到:
 * [爬取 One 问答和图片](https://github.com/wuchangfeng/Crawler/blob/master/ReadMe-One.md)
 * [爬取 SuJin 精彩文章](https://github.com/wuchangfeng/Crawler/blob/master/ReadMe-Sujin.md)
+* [爬取 DouBan Top250 图书](https://github.com/wuchangfeng/Crawler)
 
 ### Sample
 [戳这里体验一下](http://fir.im/MyOne)
 
 ### Contribution
-由于自己暑期实习不是 Android 开发这块。所以并不能把大量时间花在这上面。项目虽然主体架构以及主要功能完成,但是可以扩展的地方蛮多的:
 
 * 夜间模式以及主体换肤,这一块可能稍微麻烦点,因为要配置一些暗黑图标字体等。[AppCompat v23.2 - 夜间模式最佳实践](https://kingideayou.github.io/2016/03/07/appcompat_23.2_day_night/)
-* 问答界面的优化设计。主要要做的就是加上评论以及点赞功能。这个比较简单,具体你可以参考文章界面的对应功能实现。
 * 利用 LeanCloud 提供的登录注册功能。实现不同用户使用,评论,点赞等功能。
-* 分享选项以及保存功能。这些也是比较简单的功能。
 * 适配问题一直很麻烦。个人用腾讯的云测试了很多机型,发现适配还是一个问题。
-* 最后,如果你嫌数据获取麻烦,你可以联系我。我将云端数据导出来给你 联系方式邮件或者 qq 即可。
+* 已经将豆瓣书籍的数据爬取完毕，存储在云端。你也可以再加一个页面,做豆瓣书籍推荐。
+* 新版本已经将各种 key 置于源码中,希望一起完善。
 
 ### Open source library
 
@@ -44,5 +43,9 @@
 ![oneapp4.png](http://7xrl8j.com1.z0.glb.clouddn.com/oneapp4.png)
 ![oneapp5.png](http://7xrl8j.com1.z0.glb.clouddn.com/oneapp5.png)
 ![oneapp6.png](http://7xrl8j.com1.z0.glb.clouddn.com/oneapp6.png)
+![oneapp7.png](http://7xrl8j.com1.z0.glb.clouddn.com/oneapp7.png)
+![oneapp9.png](http://7xrl8j.com1.z0.glb.clouddn.com/oneapp9.png)
+![oneapp10.png](http://7xrl8j.com1.z0.glb.clouddn.com/oneapp10.png)
+
 
 
