@@ -11,7 +11,11 @@ public class ToastUtil {
 
     public static Toast sToast;
 
-    // shortTime
+    /**
+     *  short toast 这里参照郭霖的微信公众号写法
+     * @param context
+     * @param info
+     */
     public static void showShort(Context context, String info) {
         if (sToast == null){
             sToast = Toast.makeText(context, info, Toast.LENGTH_SHORT);
@@ -21,7 +25,11 @@ public class ToastUtil {
         sToast.show();
     }
 
-    // LongTime
+    /**
+     *  long toast 这里参照郭霖的微信公众号写法
+     * @param context
+     * @param info
+     */
     public static void showLong(Context context, String info) {
         if (sToast == null){
             sToast = Toast.makeText(context, info, Toast.LENGTH_LONG);

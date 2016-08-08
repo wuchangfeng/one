@@ -3,6 +3,7 @@ package com.wu.allen.myone.ui.fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,15 @@ public abstract class BaseFragment extends Fragment implements RecyclerArrayAdap
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupFragmentComponent(MyApp.get(getActivity()).getAppComponent());
+    }
+
+    /**
+     * 子类实现该方法用于替代 getResources().getString(id) 以及进行相应的类型检查
+     * @param id
+     * @return
+     */
+    protected String getStringById(@StringRes int id) {
+        return getResources().getString(id);
     }
 
     @Override

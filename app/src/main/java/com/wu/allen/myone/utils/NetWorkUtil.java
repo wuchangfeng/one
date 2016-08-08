@@ -10,7 +10,11 @@ import android.net.NetworkInfo;
 
 public class NetWorkUtil {
 
-    // NetWork is ok?
+    /**
+     * 判断网络是否连接
+     * @param context
+     * @return
+     */
     public static boolean isNetworkConnected(Context context) {
         if (context != null) {
             ConnectivityManager mConnectivityManager = (ConnectivityManager) context
@@ -23,7 +27,11 @@ public class NetWorkUtil {
         return false;
     }
 
-    // WIFI is ok?
+    /**
+     * 判断 wifi 是否连接
+     * @param context
+     * @return
+     */
     public static boolean isWifiConnected(Context context) {
         if (context != null) {
             ConnectivityManager mConnectivityManager = (ConnectivityManager) context

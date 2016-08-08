@@ -19,7 +19,7 @@ import java.util.List;
 
 public class QaFragmentPresenter extends BaseFragmentPresenter  {
 
-
+    private static final String TAG = "QaFragmentPresenter";
     private IQaView mIQaView;
     private Qa mQa;
     private List<Qa> qas = new ArrayList<>();
@@ -62,7 +62,7 @@ public class QaFragmentPresenter extends BaseFragmentPresenter  {
                     mIQaView.fillData(qas);
                 } else {
                     mIQaView.errorLayoutShow();
-                    Log.d("QaFragmentPresenter",e.getMessage());
+                    Log.d(TAG,e.getMessage());
                 }
             }
         });

@@ -5,9 +5,12 @@ import java.util.Random;
 /**
  * Created by allen on 2016/7/18.
  */
-// this clas for generate random number for SuJinViewHolder's likes and comments
-// enjoy =_=
+
 public class RanNumUtil {
+    /**
+     * 获取 100-200 的随机数
+     * @return
+     */
     public static String genNum() {
         int max=200;
         int min=100;

@@ -8,10 +8,13 @@ public class Comment {
 
     private String comments;
     private String date;
+    private String phonesource;
 
-    public Comment(String comments,String date) {
+
+    public Comment(String comments,String date,String phonesource) {
         this.comments = comments;
         this.date = date;
+        this.phonesource = phonesource;
     }
 
     public String getComments() {
@@ -29,6 +32,15 @@ public class Comment {
 
     public Comment setDate(String date) {
         this.date = date;
+        return this;
+    }
+
+    public String getPhonesource() {
+        return phonesource;
+    }
+
+    public Comment setPhonesource(String phonesource) {
+        this.phonesource = phonesource;
         return this;
     }
 }

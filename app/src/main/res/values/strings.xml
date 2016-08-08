@@ -29,6 +29,7 @@
     <string name="qa_comment">个评论</string>
     <string name="qa_focu">人喜欢</string>
     <string name="like">赞</string>
+    <string name="from">来自</string>
     <!--for aboutactivity-->
     <string name="app_intro">One\nGitHub:https://github.com/wuchangfeng/One</string>
     <string name="app_about">Contact\nQQ:437806668\nTelegram:@allenwu</string>

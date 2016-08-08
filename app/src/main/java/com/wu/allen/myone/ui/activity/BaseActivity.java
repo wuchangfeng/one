@@ -2,6 +2,7 @@ package com.wu.allen.myone.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,13 +23,23 @@ public abstract class BaseActivity extends AppCompatActivity {
         setupFragmentComponent(MyApp.get(getApplication()).getAppComponent());
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
+    /**
+     * 子类实现该方法用于替代 findViewById
+     * @param id
+     * @param <T>
+     * @return
+     */
     protected <T extends View> T $(@IdRes int id) {
         return (T)findViewById(id);
+    }
+
+    /**
+     * 子类实现该方法用于替代 getResources().getString(id) 以及进行相应的类型检查
+     * @param id
+     * @return
+     */
+    protected String getStringById(@StringRes int id) {
+        return getResources().getString(id);
     }
 
     @Override

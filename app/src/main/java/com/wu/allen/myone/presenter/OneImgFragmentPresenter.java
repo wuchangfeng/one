@@ -16,6 +16,7 @@ import java.util.List;
 
 public class OneImgFragmentPresenter extends BaseFragmentPresenter  {
 
+    private static final String TAG = "OneImgFragmentPresenter";
     private IOneView mIOneView;
     private List<One> ones = new ArrayList<>();
 
@@ -55,7 +56,7 @@ public class OneImgFragmentPresenter extends BaseFragmentPresenter  {
                     mIOneView.fillData(ones);
                 } else {
                     mIOneView.errorLayoutShow();
-                    Log.d("OneImgFragmentPresenter",e.getMessage());
+                    Log.d(TAG,e.getMessage());
                 }
             }
         });

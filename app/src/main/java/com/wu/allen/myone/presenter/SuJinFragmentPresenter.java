@@ -19,6 +19,7 @@ import java.util.List;
 
 public class SuJinFragmentPresenter extends BaseFragmentPresenter {
 
+    private static final String TAG = "SuJinFragmentPresenter";
     private ISuJinView mSuJinView;
     private List<Article> articles = new ArrayList<>();
 
@@ -62,7 +63,7 @@ public class SuJinFragmentPresenter extends BaseFragmentPresenter {
                     mSuJinView.fillData(articles);
                 } else {
                     mSuJinView.errorLayoutShow();
-                    Log.d("SuJinFragmentPresenter",e.getMessage());
+                    Log.d(TAG,e.getMessage());
                 }
             }
         });

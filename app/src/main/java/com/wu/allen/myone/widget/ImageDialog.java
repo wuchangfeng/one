@@ -29,6 +29,18 @@ public class ImageDialog extends android.support.v4.app.DialogFragment{
     public ImageDialog() {
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        // safety check
+        if (getDialog() == null) {
+            return;
+        }
+        // set the animations to use on showing and hiding the dialog
+        getDialog().getWindow().setWindowAnimations(
+            R.style.DialogAnimation);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

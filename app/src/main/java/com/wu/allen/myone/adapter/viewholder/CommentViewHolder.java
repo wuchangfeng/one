@@ -13,18 +13,21 @@ import com.wu.allen.myone.model.Comment;
 public class CommentViewHolder extends BaseViewHolder<Comment> {
 
     private static final String TAG = "CommentViewHolder";
-    private TextView tvComment,tvDate;
+    private TextView tvComment,tvDate,tvPhoneType;
 
     public CommentViewHolder(ViewGroup parent) {
         super(parent,R.layout.item_comment_list);
         tvComment = $(R.id.tv_comment_detail);
-        tvDate = $(R.id.tv__comment_date);
+        tvDate = $(R.id.tv_comment_date);
+        tvPhoneType = $(R.id.tv_phone_type);
     }
 
     @Override
     public void setData(Comment data) {
+        String phoneType = getContext().getResources().getString(R.string.from);
         super.setData(data);
         tvComment.setText(data.getComments());
         tvDate.setText(data.getDate());
+        tvPhoneType.setText(phoneType+data.getPhonesource());
     }
 }

@@ -1,5 +1,6 @@
 package com.wu.allen.myone.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import com.avos.avoscloud.AVException;
@@ -22,6 +24,7 @@ import com.wu.allen.myone.adapter.CommentAdapter;
 import com.wu.allen.myone.injector.components.AppComponent;
 import com.wu.allen.myone.model.Comment;
 import com.wu.allen.myone.utils.DateUtil;
+import com.wu.allen.myone.utils.DeviceUtil;
 import com.wu.allen.myone.utils.ToastUtil;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,12 +86,18 @@ public class CommentsActivity extends BaseActivity {
             AVObject comInsert = new AVObject(comment);
             comInsert.put("name", comments);
             comInsert.put("date", DateUtil.getCurrentDate());
+            comInsert.put("phonesource", DeviceUtil.getManufacturer()+DeviceUtil.getModel());
             comInsert.put("dependent", article);
             comInsert.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(AVException e) {
                     if (e == null) {
                         edtComment.setText("");
+                        // refresh recycler
+                        QueryComment();
+                        // close soft keyborad
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(edtComment.getWindowToken(),0);
                     }
                 }
             });
@@ -107,7 +116,8 @@ public class CommentsActivity extends BaseActivity {
                     for (AVObject avObject : list) {
                         String com = avObject.getString("name");
                         String date = avObject.getString("date");
-                        comment = new Comment(com,date);
+                        String phonesource = avObject.getString("phonesource");
+                        comment = new Comment(com,date,phonesource);
                         comments.add(comment);
                     }
                     mCommentAdapter.addAll(comments);

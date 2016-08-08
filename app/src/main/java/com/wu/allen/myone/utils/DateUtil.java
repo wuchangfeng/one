@@ -9,7 +9,10 @@ import java.util.Date;
  */
 
 public class DateUtil {
-
+    /**
+     * 获取如 2016-08-08 格式日期
+     * @return
+     */
     public static String getCurrentDate(){
         Calendar now = Calendar.getInstance();
         Date d = new Date();
