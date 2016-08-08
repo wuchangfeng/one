@@ -9,19 +9,19 @@
 爬虫代码你可以在这里看到:
 * [爬取 One 问答和图片](https://github.com/wuchangfeng/Crawler/blob/master/ReadMe-One.md)
 * [爬取 SuJin 精彩文章](https://github.com/wuchangfeng/Crawler/blob/master/ReadMe-Sujin.md)
+* [爬取 DouBan Top250 图书](https://github.com/wuchangfeng/Crawler)
 
 ### Sample
+
 [戳这里体验一下](http://fir.im/MyOne)
 
 ### Contribution
-由于自己暑期实习不是 Android 开发这块。所以并不能把大量时间花在这上面。项目虽然主体架构以及主要功能完成,但是可以扩展的地方蛮多的:
 
 * 夜间模式以及主体换肤,这一块可能稍微麻烦点,因为要配置一些暗黑图标字体等。[AppCompat v23.2 - 夜间模式最佳实践](https://kingideayou.github.io/2016/03/07/appcompat_23.2_day_night/)
-* 问答界面的优化设计。主要要做的就是加上评论以及点赞功能。这个比较简单,具体你可以参考文章界面的对应功能实现。
 * 利用 LeanCloud 提供的登录注册功能。实现不同用户使用,评论,点赞等功能。
-* 分享选项以及保存功能。这些也是比较简单的功能。
 * 适配问题一直很麻烦。个人用腾讯的云测试了很多机型,发现适配还是一个问题。
-* 最后,如果你嫌数据获取麻烦,你可以联系我。我将云端数据导出来给你 联系方式邮件或者 qq 即可。
+* 已经将豆瓣书籍的数据爬取完毕，存储在云端。你也可以再加一个页面,做豆瓣书籍推荐。
+* 新版本已经将各种 key 置于源码中,希望一起完善。
 
 ### Open source library
 
@@ -38,14 +38,16 @@
 
 ### ScreenShot
 
-![](http://ww4.sinaimg.cn/large/b10d1ea5gw1f668agtzr0j206z0dx75c.jpg)
-![](http://ww2.sinaimg.cn/large/b10d1ea5gw1f668bhb75hj20730dv75b.jpg)
-![](http://ww3.sinaimg.cn/large/b10d1ea5gw1f668o5bgkpj20710dwjsb.jpg)
-![](http://ww1.sinaimg.cn/large/b10d1ea5gw1f668cesawpj20700dut9x.jpg)
-![](http://ww4.sinaimg.cn/large/b10d1ea5gw1f668e6mmiwj20740dtgmk.jpg)
-![](http://ww2.sinaimg.cn/large/b10d1ea5gw1f668d1p3jqj20700dyjs3.jpg)
-![](http://ww4.sinaimg.cn/large/b10d1ea5gw1f6697lrq7qj206y0dv0tz.jpg)
-![](http://ww4.sinaimg.cn/large/b10d1ea5gw1f668nq8bqyj20700dx75j.jpg)
-![](http://ww2.sinaimg.cn/large/b10d1ea5gw1f668crn4byj20720dxdgf.jpg)
+![](http://ww1.sinaimg.cn/large/b10d1ea5gw1f6j59ignonj20870g5dhu.jpg)
+![](http://ww4.sinaimg.cn/large/b10d1ea5gw1f6j5a513y4j20880g5tal.jpg)
+![](http://ww4.sinaimg.cn/large/b10d1ea5gw1f6j5ad1y0kj20890g7mxy.jpg)
+![](http://ww2.sinaimg.cn/large/b10d1ea5gw1f6j5alhddzj20880g60ud.jpg)
+![](http://ww4.sinaimg.cn/large/b10d1ea5gw1f6j5at0d5aj20890g5gmq.jpg)
+![](http://ww4.sinaimg.cn/large/b10d1ea5gw1f6j5b00rd8j20870g6q49.jpg)
+![](http://ww3.sinaimg.cn/large/b10d1ea5gw1f6j5b6y6x2j20880g43zh.jpg)
+![](http://ww4.sinaimg.cn/large/b10d1ea5gw1f6j5bjkawmj20890g6mys.jpg)
+
+
+
 
 
