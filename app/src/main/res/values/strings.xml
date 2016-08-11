@@ -16,6 +16,7 @@
     <string name="OneImg">一个</string>
     <string name="SuJin">文章</string>
     <string name="WenDa">问答</string>
+    <string name="TuShu">图书</string>
     <!--for other-->
     <string name="loading">loading</string>
     <string name="lable">问答</string>
@@ -45,6 +46,12 @@
     <string name="load_more">更多加载中……</string>
     <string name="net_error">网络错误,请重试</string>
     <string name="error_happen">网络错误,检查一下哈</string>
+    <string name="want_read">想读</string>
+    <string name="had_read">读过</string>
+    <string name="book_intr">简介</string>
+    <string name="book_sure">确定</string>
+    <string name="book_rate">分</string>
+
     <!--for AndroidManifest-->
     <string name="my_save">我的收藏</string>
     <string name="about_app">关于</string>

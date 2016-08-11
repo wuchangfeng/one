@@ -124,4 +124,11 @@ public class SuJinFragment extends BaseFragment implements ISuJinView{
         mSuJinAdapter.addAll(list);
         mSuJinAdapter.notifyDataSetChanged();
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(mSuJinFragmentPresenter != null)
+            mSuJinFragmentPresenter = null;
+    }
 }

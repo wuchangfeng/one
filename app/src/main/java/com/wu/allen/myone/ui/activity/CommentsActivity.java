@@ -105,6 +105,7 @@ public class CommentsActivity extends BaseActivity {
     }
 
     public void QueryComment(){
+        mCommentAdapter.clear();
         AVObject article = AVObject.createWithoutData(typeTable, objectId);
         AVQuery<AVObject> query = new AVQuery<>(comment);
         query.whereEqualTo("dependent", article);

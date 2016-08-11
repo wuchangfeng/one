@@ -1,11 +1,12 @@
 package com.wu.allen.myone.adapter.viewholder;
 
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.Qa;
+import com.wu.allen.myone.ui.activity.CommentsActivity;
 import com.wu.allen.myone.utils.RanNumUtil;
 import com.wu.allen.myone.utils.ToastUtil;
 
@@ -13,7 +14,7 @@ import com.wu.allen.myone.utils.ToastUtil;
  * Created by allen on 2016/7/15.
  */
 
-public class QaViewHolder extends BaseViewHolder<Qa> {
+public class QaViewHolder extends MyBaseViewHolder<Qa> {
 
     private static final String TAG = "QaViewHolder";
     private TextView tvQues;
@@ -40,7 +41,11 @@ public class QaViewHolder extends BaseViewHolder<Qa> {
         tvComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastUtil.showLong(getContext(),"hello comment");
+                Intent intent = new Intent(getContext(), CommentsActivity.class);
+                intent.putExtra("objectId",qa.getObjectId());
+                intent.putExtra("type","OneQa");
+                intent.putExtra("comment","QuesCom");
+                getContext().startActivity(intent);
             }
         });
         tvFocu.setOnClickListener(new View.OnClickListener() {

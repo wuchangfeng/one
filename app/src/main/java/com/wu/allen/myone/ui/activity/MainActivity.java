@@ -14,6 +14,7 @@ import com.nispok.snackbar.SnackbarManager;
 import com.nispok.snackbar.listeners.ActionClickListener;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.injector.components.AppComponent;
+import com.wu.allen.myone.ui.fragment.BookFragment;
 import com.wu.allen.myone.ui.fragment.OneImgFragment;
 import com.wu.allen.myone.ui.fragment.QaFragment;
 import com.wu.allen.myone.ui.fragment.SuJinFragment;
@@ -103,6 +104,8 @@ public class MainActivity extends BaseActivity {
                         return new SuJinFragment();
                     case 2:
                         return new QaFragment();
+                    case 3:
+                        return new BookFragment();
                     default:
                         return new OneImgFragment();
                 }
@@ -110,7 +113,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public int getCount() {
-                return 3;
+                return 4;
             }
 
             @Override
@@ -122,6 +125,8 @@ public class MainActivity extends BaseActivity {
                         return getString(R.string.SuJin);
                     case 2:
                         return getString(R.string.WenDa);
+                    case 3:
+                        return getString(R.string.TuShu);
                     default:
                         return getString(R.string.OneImg);
                 }
