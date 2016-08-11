@@ -5,7 +5,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.ArticleSave;
 
@@ -13,7 +12,7 @@ import com.wu.allen.myone.model.ArticleSave;
  * Created by allen on 2016/7/15.
  */
 
-public class SaveViewHolder extends BaseViewHolder<ArticleSave> {
+public class SaveViewHolder extends MyBaseViewHolder<ArticleSave> {
 
     private static final String TAG = "SuJinViewHolder";
     private TextView tvTitle;

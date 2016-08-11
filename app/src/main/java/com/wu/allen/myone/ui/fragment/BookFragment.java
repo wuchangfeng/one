@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +57,8 @@ public class BookFragment extends BaseFragment implements IBookView {
         mBookAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                //mBookFragmentPresenter.getIntentQa(getActivity(),position);
+                //Log.d(TAG,"onclick");
+                //mBookFragmentPresenter.getBookIntr(getActivity(),position);
             }
         });
         mRecyclerView.setRefreshListener(this);
@@ -67,7 +67,6 @@ public class BookFragment extends BaseFragment implements IBookView {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG,"oncreate");
         mBookFragmentPresenter.onAttachView(this);
         mBookFragmentPresenter.onCreate(0);
     }
@@ -114,5 +113,12 @@ public class BookFragment extends BaseFragment implements IBookView {
     public void fillData(List<Book> list) {
         mBookAdapter.addAll(list);
         mBookAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(mBookFragmentPresenter != null)
+            mBookFragmentPresenter = null;
     }
 }

@@ -123,4 +123,11 @@ public class OneImgFragment extends BaseFragment implements IOneView{
         mOneImgAdapter.addAll(list);
         mOneImgAdapter.notifyDataSetChanged();
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(mOneImgFragmentPresenter != null)
+            mOneImgFragmentPresenter = null;
+    }
 }

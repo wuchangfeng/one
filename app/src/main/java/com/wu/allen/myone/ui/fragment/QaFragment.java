@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,7 +67,6 @@ public class QaFragment extends BaseFragment implements IQaView{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG,"oncreate");
         mQaFragmentPresenter.onAttachView(this);
         mQaFragmentPresenter.onCreate(0);
     }
@@ -108,12 +106,12 @@ public class QaFragment extends BaseFragment implements IQaView{
 
     @Override
     public void showLoading() {
-        Log.d(TAG,"loading is ok");
+
     }
 
     @Override
     public void hideLoading() {
-        Log.d(TAG,"hideloading is ok");
+
     }
 
     @Override
@@ -125,5 +123,12 @@ public class QaFragment extends BaseFragment implements IQaView{
     public void fillData(List<Qa> list) {
         mQaAdapter.addAll(list);
         mQaAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(mQaFragmentPresenter != null)
+            mQaFragmentPresenter = null;
     }
 }

@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.One;
 import com.wu.allen.myone.ui.activity.MainActivity;
@@ -17,7 +16,7 @@ import com.wu.allen.myone.widget.ImageDialog;
  * Created by allen on 2016/7/15.
  */
 
-public class OneImgViewHolder extends BaseViewHolder<One> {
+public class OneImgViewHolder extends MyBaseViewHolder<One> {
 
     private static final String TAG = "OneImgViewHolder";
     private TextView tvDate,tvAuthor,tvIntro;

@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.SaveCallback;
-import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.squareup.picasso.Picasso;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.Article;
@@ -24,7 +23,7 @@ import static com.wu.allen.myone.R.string.like;
  * Created by allen on 2016/7/14.
  */
 
-public class SuJinViewHolder extends BaseViewHolder<Article>{
+public class SuJinViewHolder extends MyBaseViewHolder<Article>{
 
     private static final String TAG = "SuJinViewHolder";
     private ImageView imgCover;

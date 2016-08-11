@@ -29,10 +29,8 @@ public class BookFragmentPresenter extends BaseFragmentPresenter {
         mBookView = iBookView;
     }
 
-    public void getIntentArticle(Context context,int position){
-        //Intent intent = new Intent(context, ArtDetailActivity.class);
-        //intent.putExtra("article", articles.get(position));
-        //context.startActivity(intent);
+    public void getBookIntr(Context context,int position){
+        Log.d(TAG,"onclick");
     }
 
     private void getBook(int page) {

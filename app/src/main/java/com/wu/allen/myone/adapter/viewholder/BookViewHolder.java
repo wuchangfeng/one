@@ -1,10 +1,11 @@
 package com.wu.allen.myone.adapter.viewholder;
 
-import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.jude.easyrecyclerview.adapter.BaseViewHolder;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.squareup.picasso.Picasso;
 import com.wu.allen.myone.R;
 import com.wu.allen.myone.model.Book;
@@ -13,11 +14,12 @@ import com.wu.allen.myone.model.Book;
  * Created by allen on 2016/8/10.
  */
 
-public class BookViewHolder extends BaseViewHolder<Book> {
+public class BookViewHolder extends MyBaseViewHolder<Book> {
 
     private static final String TAG = "BookViewHolder";
     private ImageView imgCover;
     private TextView tvTitle,tvAuthor,tvBookRate,tvRateNum;
+    private Button btnBookIntr,btnWantRead;
 
 
     public BookViewHolder(ViewGroup parent) {
@@ -31,14 +33,23 @@ public class BookViewHolder extends BaseViewHolder<Book> {
 
     @Override
     public void setData(final Book book){
-        Log.d(TAG,book.getBookRate());
         Picasso.with(getContext())
             .load(book.getImgUrl())
             .noFade()
             .into(imgCover);
         tvTitle.setText(book.getBookTitle());
         tvAuthor.setText(book.getBookAuth());
-        tvBookRate.setText(book.getBookRate()+"分");
+        tvBookRate.setText(book.getBookRate()+getStringById(R.string.book_rate));
         tvRateNum.setText(book.getRateNum());
+        imgCover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MaterialDialog.Builder(getContext())
+                    .title(book.getBookTitle())
+                    .content(book.getBookIntr())
+                    .negativeText(getStringById(R.string.book_sure))
+                    .show();
+            }
+        });
     }
 }
